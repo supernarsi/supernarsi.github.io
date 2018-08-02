@@ -5,15 +5,12 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
-
-
-
 
 
 
@@ -41,6 +38,10 @@
 
 
 
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
 
 
 
@@ -49,25 +50,42 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=6.0.6" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.6">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.6">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.6">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=6.0.6" color="#222">
-
-
-
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
 
 
 
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Narsi">
+<meta property="og:url" content="https://www.narsi.me/index.html">
+<meta property="og:site_name" content="Narsi">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Narsi">
 
 
 
@@ -76,13 +94,15 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '6.0.6',
+    version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
+    fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -94,33 +114,12 @@
 </script>
 
 
-  
-
-
-
-
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Narsi">
-<meta property="og:url" content="https://www.narsi.me/index.html">
-<meta property="og:site_name" content="Narsi">
-<meta property="og:locale" content="zh-CN">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Narsi">
-
-
-
-
-
 
   <link rel="canonical" href="https://www.narsi.me/"/>
 
 
 
-<script type="text/javascript" id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
-</script>
+
 
   <title>Narsi</title>
   
@@ -132,37 +131,9 @@
 
 
 
-
-  <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
-
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
-
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
-  </style>
-</noscript>
-
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -174,14 +145,12 @@
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"> 
-
-<div class="site-brand-wrapper">
+      <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Narsi</span>
         <span class="logo-line-after"><i></i></span>
@@ -193,7 +162,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
+    <button>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -208,49 +177,54 @@
     <ul id="menu" class="menu">
       
         
-        
-          
-  <li class="menu-item menu-item-home">
-    <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
-</li>
-
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
       
         
-        
-          
-  <li class="menu-item menu-item-categories">
-    <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
-</li>
-
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
       
         
-        
-          
-  <li class="menu-item menu-item-archives">
-    <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
-</li>
-
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
       
         
-        
-          
-  <li class="menu-item menu-item-books">
-    <a href="/books/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-book"></i> <br />读书</a>
-</li>
-
+        <li class="menu-item menu-item-books">
+          <a href="/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书
+          </a>
+        </li>
       
         
-        
-          
-  <li class="menu-item menu-item-movies">
-    <a href="/movies/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-movie"></i> <br />影视</a>
-</li>
-
+        <li class="menu-item menu-item-movies">
+          <a href="/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-film"></i> <br />
+            
+            影音
+          </a>
+        </li>
       
 
       
@@ -258,50 +232,16 @@
   
 
   
-    
-
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
-  
-
-  
 </nav>
-
-
-  
 
 
 
  </div>
     </header>
 
-    
-
-
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
@@ -312,8 +252,6 @@
 
   
   
-  
-
   
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
@@ -352,10 +290,11 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-14T00:00:00Z">2018-03-14</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-14T00:00:00Z">
+                2018-03-14
+              </time>
             
 
-            
             
 
             
@@ -373,7 +312,11 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
 
                 
                 
@@ -433,9 +376,6 @@
         
       
     </div>
-
-    
-
     
     
     
@@ -474,8 +414,6 @@
   
   
 
-  
-
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -512,10 +450,11 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-03T00:00:00Z">2017-01-03</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-03T00:00:00Z">
+                2017-01-03
+              </time>
             
 
-            
             
 
             
@@ -533,7 +472,11 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/杂文/" itemprop="url" rel="index"><span itemprop="name">杂文</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/杂文/" itemprop="url" rel="index">
+                    <span itemprop="name">杂文</span>
+                  </a>
+                </span>
 
                 
                 
@@ -598,9 +541,6 @@
         
       
     </div>
-
-    
-
     
     
     
@@ -639,8 +579,6 @@
   
   
 
-  
-
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -677,10 +615,11 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-04-23T00:00:00Z">2014-04-23</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-04-23T00:00:00Z">
+                2014-04-23
+              </time>
             
 
-            
             
 
             
@@ -698,7 +637,11 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/杂文/" itemprop="url" rel="index"><span itemprop="name">杂文</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/杂文/" itemprop="url" rel="index">
+                    <span itemprop="name">杂文</span>
+                  </a>
+                </span>
 
                 
                 
@@ -759,9 +702,6 @@
         
       
     </div>
-
-    
-
     
     
     
@@ -800,8 +740,6 @@
   
   
 
-  
-
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -838,10 +776,11 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-04-07T00:00:00Z">2014-04-07</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-04-07T00:00:00Z">
+                2014-04-07
+              </time>
             
 
-            
             
 
             
@@ -859,7 +798,11 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/杂文/" itemprop="url" rel="index"><span itemprop="name">杂文</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/杂文/" itemprop="url" rel="index">
+                    <span itemprop="name">杂文</span>
+                  </a>
+                </span>
 
                 
                 
@@ -919,9 +862,6 @@
         
       
     </div>
-
-    
-
     
     
     
@@ -960,8 +900,6 @@
   
   
 
-  
-
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -998,10 +936,11 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-02-15T00:00:00Z">2014-02-15</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-02-15T00:00:00Z">
+                2014-02-15
+              </time>
             
 
-            
             
 
             
@@ -1019,7 +958,11 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/杂文/" itemprop="url" rel="index"><span itemprop="name">杂文</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/杂文/" itemprop="url" rel="index">
+                    <span itemprop="name">杂文</span>
+                  </a>
+                </span>
 
                 
                 
@@ -1076,9 +1019,6 @@
         
       
     </div>
-
-    
-
     
     
     
@@ -1117,8 +1057,6 @@
   
   
 
-  
-
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -1155,10 +1093,11 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-12-01T00:00:00Z">2013-12-01</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-12-01T00:00:00Z">
+                2013-12-01
+              </time>
             
 
-            
             
 
             
@@ -1176,7 +1115,11 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/杂文/" itemprop="url" rel="index"><span itemprop="name">杂文</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/杂文/" itemprop="url" rel="index">
+                    <span itemprop="name">杂文</span>
+                  </a>
+                </span>
 
                 
                 
@@ -1233,9 +1176,6 @@
         
       
     </div>
-
-    
-
     
     
     
@@ -1274,8 +1214,6 @@
   
   
 
-  
-
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -1312,10 +1250,11 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-09-29T00:00:00Z">2013-09-29</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-09-29T00:00:00Z">
+                2013-09-29
+              </time>
             
 
-            
             
 
             
@@ -1333,7 +1272,11 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/杂文/" itemprop="url" rel="index"><span itemprop="name">杂文</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/杂文/" itemprop="url" rel="index">
+                    <span itemprop="name">杂文</span>
+                  </a>
+                </span>
 
                 
                 
@@ -1393,9 +1336,6 @@
         
       
     </div>
-
-    
-
     
     
     
@@ -1434,8 +1374,6 @@
   
   
 
-  
-
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -1472,10 +1410,11 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-09-12T00:00:00Z">2013-09-12</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-09-12T00:00:00Z">
+                2013-09-12
+              </time>
             
 
-            
             
 
             
@@ -1493,7 +1432,11 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
 
                 
                 
@@ -1555,9 +1498,6 @@
         
       
     </div>
-
-    
-
     
     
     
@@ -1596,8 +1536,6 @@
   
   
 
-  
-
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -1634,10 +1572,11 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-09-05T00:00:00Z">2013-09-05</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-09-05T00:00:00Z">
+                2013-09-05
+              </time>
             
 
-            
             
 
             
@@ -1655,7 +1594,11 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
 
                 
                 
@@ -1716,9 +1659,6 @@
         
       
     </div>
-
-    
-
     
     
     
@@ -1757,8 +1697,6 @@
   
   
 
-  
-
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -1795,10 +1733,11 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-09-02T00:00:00Z">2013-09-02</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-09-02T00:00:00Z">
+                2013-09-02
+              </time>
             
 
-            
             
 
             
@@ -1816,7 +1755,11 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
 
                 
                 
@@ -1873,9 +1816,6 @@
         
       
     </div>
-
-    
-
     
     
     
@@ -1910,12 +1850,15 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
 
           </div>
+          
+
+
           
 
         </div>
@@ -1946,81 +1889,66 @@
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">26</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
+          <nav class="site-state motion-element">
 
+            
+              <div class="site-state-item site-state-posts">
               
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">2</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
+                <a href="/archives">
               
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
 
+            
               
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">5</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
               
-            </nav>
-          
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
 
           
 
           
             <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  <a href="https://github.com/supernarsi" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="mailto:narsihuang@gmail.com" target="_blank" title="Email" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>Email</a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="http://weibo.com/1633421434" target="_blank" title="Weibo" rel="external nofollow"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
-                  
-                </span>
-              
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/supernarsi" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:narsihuang@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/1633421434" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
             </div>
           
 
@@ -2030,9 +1958,6 @@
           
           
 
-          
-            
-          
           
 
         </div>
@@ -2059,16 +1984,10 @@
   <span class="author" itemprop="copyrightHolder">Narsi</span>
 
   
-
-  
 </div>
 
 
-  
-
-
-
-  <div class="powered-by">Power By <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
@@ -2076,13 +1995,12 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.0.6</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
 
 
         
-
 
 
 
@@ -2130,11 +2048,7 @@
 
 
 
-
-
-
-
-
+  
 
 
 
@@ -2154,6 +2068,16 @@
 
   
   
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
     <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   
 
@@ -2162,29 +2086,38 @@
     <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
   
 
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
 
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=6.0.6"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=6.0.6"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.6"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
 
 
 
   
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
 
 
 
@@ -2207,6 +2140,7 @@
 
 
 
+
 <!-- LOCAL: You can save these files to your site and update links -->
     
         
@@ -2223,6 +2157,7 @@
     
 
     
+
 
 
 
@@ -2295,40 +2230,35 @@
             var counter = results[0];
             counter.fetchWhenSave(true);
             counter.increment("time");
-            
             counter.save(null, {
               success: function(counter) {
-                
-                  var $element = $(document.getElementById(url));
-                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
-                
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
               },
               error: function(counter, error) {
                 console.log('Failed to save Visitor num, with error message: ' + error.message);
               }
             });
           } else {
-            
-              var newcounter = new Counter();
-              /* Set ACL */
-              var acl = new AV.ACL();
-              acl.setPublicReadAccess(true);
-              acl.setPublicWriteAccess(true);
-              newcounter.setACL(acl);
-              /* End Set ACL */
-              newcounter.set("title", title);
-              newcounter.set("url", url);
-              newcounter.set("time", 1);
-              newcounter.save(null, {
-                success: function(newcounter) {
-                  var $element = $(document.getElementById(url));
-                  $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-                },
-                error: function(newcounter, error) {
-                  console.log('Failed to create');
-                }
-              });
-            
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
           }
         },
         error: function(error) {
@@ -2354,64 +2284,6 @@
   
 
   
-  
-
-  
-  
-    
-      
-        
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  
-
-  
-    
-      <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
-    });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-      var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-    
-  
-
-
-  
-  
-
   
 
   

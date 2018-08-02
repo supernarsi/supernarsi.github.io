@@ -5,15 +5,12 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
-
-
-
 
 
 
@@ -41,6 +38,10 @@
 
 
 
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
 
 
 
@@ -49,25 +50,47 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=6.0.6" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.6">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.6">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.6">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=6.0.6" color="#222">
-
-
-
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
 
 
 
+
+
+  <meta name="keywords" content="前端," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="介绍写前端时我喜欢用 Notepad++，因为它的轻便，但也正是因为轻便，比起其他的编辑器，就显得功能太简单甚至简陋，最为诟病的应该就是代码补全的功能。Notepad++ 自带的代码补全功能十分鸡肋，甚至于连默认都没有开启该功能，需要自己在「设置」-「首选项」-「Auto-Completion」中去手动勾选。好在 Notepad++ 可以安装丰富的插件，通过第三方的方法来弥补这先天不足。 Emme">
+<meta name="keywords" content="前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="禅意的编程——Emmet">
+<meta property="og:url" content="https://www.narsi.me/2013/08/27/zen-coding/index.html">
+<meta property="og:site_name" content="Narsi">
+<meta property="og:description" content="介绍写前端时我喜欢用 Notepad++，因为它的轻便，但也正是因为轻便，比起其他的编辑器，就显得功能太简单甚至简陋，最为诟病的应该就是代码补全的功能。Notepad++ 自带的代码补全功能十分鸡肋，甚至于连默认都没有开启该功能，需要自己在「设置」-「首选项」-「Auto-Completion」中去手动勾选。好在 Notepad++ 可以安装丰富的插件，通过第三方的方法来弥补这先天不足。 Emme">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-15T13:31:33.803Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="禅意的编程——Emmet">
+<meta name="twitter:description" content="介绍写前端时我喜欢用 Notepad++，因为它的轻便，但也正是因为轻便，比起其他的编辑器，就显得功能太简单甚至简陋，最为诟病的应该就是代码补全的功能。Notepad++ 自带的代码补全功能十分鸡肋，甚至于连默认都没有开启该功能，需要自己在「设置」-「首选项」-「Auto-Completion」中去手动勾选。好在 Notepad++ 可以安装丰富的插件，通过第三方的方法来弥补这先天不足。 Emme">
 
 
 
@@ -76,13 +99,15 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '6.0.6',
+    version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
+    fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -94,38 +119,12 @@
 </script>
 
 
-  
-
-
-
-
-  <meta name="description" content="介绍写前端时我喜欢用 Notepad++，因为它的轻便，但也正是因为轻便，比起其他的编辑器，就显得功能太简单甚至简陋，最为诟病的应该就是代码补全的功能。Notepad++ 自带的代码补全功能十分鸡肋，甚至于连默认都没有开启该功能，需要自己在「设置」-「首选项」-「Auto-Completion」中去手动勾选。好在 Notepad++ 可以安装丰富的插件，通过第三方的方法来弥补这先天不足。 Emme">
-<meta name="keywords" content="前端">
-<meta property="og:type" content="article">
-<meta property="og:title" content="禅意的编程——Emmet">
-<meta property="og:url" content="https://www.narsi.me/2013/08/27/zen-coding/index.html">
-<meta property="og:site_name" content="Narsi">
-<meta property="og:description" content="介绍写前端时我喜欢用 Notepad++，因为它的轻便，但也正是因为轻便，比起其他的编辑器，就显得功能太简单甚至简陋，最为诟病的应该就是代码补全的功能。Notepad++ 自带的代码补全功能十分鸡肋，甚至于连默认都没有开启该功能，需要自己在「设置」-「首选项」-「Auto-Completion」中去手动勾选。好在 Notepad++ 可以安装丰富的插件，通过第三方的方法来弥补这先天不足。 Emme">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-15T13:31:33.803Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="禅意的编程——Emmet">
-<meta name="twitter:description" content="介绍写前端时我喜欢用 Notepad++，因为它的轻便，但也正是因为轻便，比起其他的编辑器，就显得功能太简单甚至简陋，最为诟病的应该就是代码补全的功能。Notepad++ 自带的代码补全功能十分鸡肋，甚至于连默认都没有开启该功能，需要自己在「设置」-「首选项」-「Auto-Completion」中去手动勾选。好在 Notepad++ 可以安装丰富的插件，通过第三方的方法来弥补这先天不足。 Emme">
-
-
-
-
-
 
   <link rel="canonical" href="https://www.narsi.me/2013/08/27/zen-coding/"/>
 
 
 
-<script type="text/javascript" id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
-</script>
+
 
   <title>禅意的编程——Emmet | Narsi</title>
   
@@ -137,37 +136,9 @@
 
 
 
-
-  <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
-
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
-
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
-  </style>
-</noscript>
-
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -178,14 +149,12 @@
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"> 
-
-<div class="site-brand-wrapper">
+      <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Narsi</span>
         <span class="logo-line-after"><i></i></span>
@@ -197,7 +166,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
+    <button>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -212,49 +181,54 @@
     <ul id="menu" class="menu">
       
         
-        
-          
-  <li class="menu-item menu-item-home">
-    <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
-</li>
-
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
       
         
-        
-          
-  <li class="menu-item menu-item-categories">
-    <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
-</li>
-
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
       
         
-        
-          
-  <li class="menu-item menu-item-archives">
-    <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
-</li>
-
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
       
         
-        
-          
-  <li class="menu-item menu-item-books">
-    <a href="/books/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-book"></i> <br />读书</a>
-</li>
-
+        <li class="menu-item menu-item-books">
+          <a href="/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书
+          </a>
+        </li>
       
         
-        
-          
-  <li class="menu-item menu-item-movies">
-    <a href="/movies/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-movie"></i> <br />影视</a>
-</li>
-
+        <li class="menu-item menu-item-movies">
+          <a href="/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-film"></i> <br />
+            
+            影音
+          </a>
+        </li>
       
 
       
@@ -262,50 +236,16 @@
   
 
   
-    
-
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
-  
-
-  
 </nav>
-
-
-  
 
 
 
  </div>
     </header>
 
-    
-
-
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          
           <div id="content" class="content">
             
 
@@ -316,8 +256,6 @@
 
   
   
-  
-
   
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
@@ -354,10 +292,11 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-08-27T08:00:00+08:00">2013-08-27</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-08-27T08:00:00+08:00">
+                2013-08-27
+              </time>
             
 
-            
             
 
             
@@ -375,7 +314,11 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
 
                 
                 
@@ -499,9 +442,6 @@ part3
 
       
     </div>
-
-    
-
     
     
     
@@ -519,7 +459,7 @@ part3
 
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/WechatPay.jpeg" alt="Narsi 微信支付"/>
+        <img id="wechat_qr" src="/images/WechatPay.jpg" alt="Narsi 微信支付"/>
         <p>微信支付</p>
       </div>
     
@@ -534,20 +474,6 @@ part3
       </div>
     
 
-    
-      <div>
-        <ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>本文作者： </strong>Narsi</li>
-  <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    <a href="https://www.narsi.me/2013/08/27/zen-coding/" title="禅意的编程——Emmet">https://www.narsi.me/2013/08/27/zen-coding/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
-</ul>
-
-      </div>
     
 
     <footer class="post-footer">
@@ -605,6 +531,9 @@ part3
           </div>
           
 
+
+          
+
   
     <div class="comments" id="comments">
       
@@ -653,81 +582,66 @@ part3
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">26</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
+          <nav class="site-state motion-element">
 
+            
+              <div class="site-state-item site-state-posts">
               
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">2</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
+                <a href="/archives">
               
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
 
+            
               
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">5</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
               
-            </nav>
-          
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
 
           
 
           
             <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  <a href="https://github.com/supernarsi" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="mailto:narsihuang@gmail.com" target="_blank" title="Email" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>Email</a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="http://weibo.com/1633421434" target="_blank" title="Weibo" rel="external nofollow"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
-                  
-                </span>
-              
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/supernarsi" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:narsihuang@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/1633421434" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
             </div>
           
 
@@ -737,9 +651,6 @@ part3
           
           
 
-          
-            
-          
           
 
         </div>
@@ -782,16 +693,10 @@ part3
   <span class="author" itemprop="copyrightHolder">Narsi</span>
 
   
-
-  
 </div>
 
 
-  
-
-
-
-  <div class="powered-by">Power By <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
@@ -799,13 +704,12 @@ part3
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.0.6</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
 
 
         
-
 
 
 
@@ -853,11 +757,7 @@ part3
 
 
 
-
-
-
-
-
+  
 
 
 
@@ -877,6 +777,16 @@ part3
 
   
   
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
     <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   
 
@@ -885,33 +795,42 @@ part3
     <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
   
 
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.0.6"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.0.6"></script>
-
-
-
   
   
-
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.6"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.0.6"></script>
-
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.6"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
 
 
 
   
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
 
 
 
@@ -928,6 +847,7 @@ part3
 
 
   
+
 
 
 
@@ -953,7 +873,7 @@ part3
       <script type="text/javascript">
       function renderGitment(){
         var gitment = new Gitmint({
-            id: window.location.pathname,
+            id: window.location.pathname, 
             owner: 'supernarsi',
             repo: 'hexo-blog',
             
@@ -974,6 +894,7 @@ part3
       
       </script>
     
+
 
 
 
@@ -1046,40 +967,35 @@ part3
             var counter = results[0];
             counter.fetchWhenSave(true);
             counter.increment("time");
-            
             counter.save(null, {
               success: function(counter) {
-                
-                  var $element = $(document.getElementById(url));
-                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
-                
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
               },
               error: function(counter, error) {
                 console.log('Failed to save Visitor num, with error message: ' + error.message);
               }
             });
           } else {
-            
-              var newcounter = new Counter();
-              /* Set ACL */
-              var acl = new AV.ACL();
-              acl.setPublicReadAccess(true);
-              acl.setPublicWriteAccess(true);
-              newcounter.setACL(acl);
-              /* End Set ACL */
-              newcounter.set("title", title);
-              newcounter.set("url", url);
-              newcounter.set("time", 1);
-              newcounter.save(null, {
-                success: function(newcounter) {
-                  var $element = $(document.getElementById(url));
-                  $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-                },
-                error: function(newcounter, error) {
-                  console.log('Failed to create');
-                }
-              });
-            
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
           }
         },
         error: function(error) {
@@ -1105,17 +1021,6 @@ part3
   
 
   
-  
-
-  
-  
-
-  
-
-
-  
-  
-
   
 
   

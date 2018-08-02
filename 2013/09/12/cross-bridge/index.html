@@ -5,15 +5,12 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
-
-
-
 
 
 
@@ -41,6 +38,10 @@
 
 
 
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
 
 
 
@@ -49,25 +50,47 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=6.0.6" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.6">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.6">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.6">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=6.0.6" color="#222">
-
-
-
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
 
 
 
+
+
+  <meta name="keywords" content="PHP," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="之前笔试时遇到一道题目，印象中似乎在哪里见过，但之前一直没在意，因此做的时候卡在了那里，思考一段时间后也没能当场解决出来。 题目大意如下：  小明和爸爸、妈妈、弟弟、爷爷一起要通过一座桥，由于是夜晚，必须打灯才能通过。桥上一次最多只能通过两人。小明过桥需要 1 分钟，爸爸需要 2 分钟，弟弟需要 3 分钟，妈妈需要 6 分钟，爷爷需要 18 分钟，两人一起过桥时时间按速度较慢者过桥时间算。他们只有">
+<meta name="keywords" content="PHP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="过桥问题">
+<meta property="og:url" content="https://www.narsi.me/2013/09/12/cross-bridge/index.html">
+<meta property="og:site_name" content="Narsi">
+<meta property="og:description" content="之前笔试时遇到一道题目，印象中似乎在哪里见过，但之前一直没在意，因此做的时候卡在了那里，思考一段时间后也没能当场解决出来。 题目大意如下：  小明和爸爸、妈妈、弟弟、爷爷一起要通过一座桥，由于是夜晚，必须打灯才能通过。桥上一次最多只能通过两人。小明过桥需要 1 分钟，爸爸需要 2 分钟，弟弟需要 3 分钟，妈妈需要 6 分钟，爷爷需要 18 分钟，两人一起过桥时时间按速度较慢者过桥时间算。他们只有">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-15T13:32:32.526Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="过桥问题">
+<meta name="twitter:description" content="之前笔试时遇到一道题目，印象中似乎在哪里见过，但之前一直没在意，因此做的时候卡在了那里，思考一段时间后也没能当场解决出来。 题目大意如下：  小明和爸爸、妈妈、弟弟、爷爷一起要通过一座桥，由于是夜晚，必须打灯才能通过。桥上一次最多只能通过两人。小明过桥需要 1 分钟，爸爸需要 2 分钟，弟弟需要 3 分钟，妈妈需要 6 分钟，爷爷需要 18 分钟，两人一起过桥时时间按速度较慢者过桥时间算。他们只有">
 
 
 
@@ -76,13 +99,15 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '6.0.6',
+    version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
+    fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -94,38 +119,12 @@
 </script>
 
 
-  
-
-
-
-
-  <meta name="description" content="之前笔试时遇到一道题目，印象中似乎在哪里见过，但之前一直没在意，因此做的时候卡在了那里，思考一段时间后也没能当场解决出来。 题目大意如下：  小明和爸爸、妈妈、弟弟、爷爷一起要通过一座桥，由于是夜晚，必须打灯才能通过。桥上一次最多只能通过两人。小明过桥需要 1 分钟，爸爸需要 2 分钟，弟弟需要 3 分钟，妈妈需要 6 分钟，爷爷需要 18 分钟，两人一起过桥时时间按速度较慢者过桥时间算。他们只有">
-<meta name="keywords" content="PHP">
-<meta property="og:type" content="article">
-<meta property="og:title" content="过桥问题">
-<meta property="og:url" content="https://www.narsi.me/2013/09/12/cross-bridge/index.html">
-<meta property="og:site_name" content="Narsi">
-<meta property="og:description" content="之前笔试时遇到一道题目，印象中似乎在哪里见过，但之前一直没在意，因此做的时候卡在了那里，思考一段时间后也没能当场解决出来。 题目大意如下：  小明和爸爸、妈妈、弟弟、爷爷一起要通过一座桥，由于是夜晚，必须打灯才能通过。桥上一次最多只能通过两人。小明过桥需要 1 分钟，爸爸需要 2 分钟，弟弟需要 3 分钟，妈妈需要 6 分钟，爷爷需要 18 分钟，两人一起过桥时时间按速度较慢者过桥时间算。他们只有">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-15T13:32:32.526Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="过桥问题">
-<meta name="twitter:description" content="之前笔试时遇到一道题目，印象中似乎在哪里见过，但之前一直没在意，因此做的时候卡在了那里，思考一段时间后也没能当场解决出来。 题目大意如下：  小明和爸爸、妈妈、弟弟、爷爷一起要通过一座桥，由于是夜晚，必须打灯才能通过。桥上一次最多只能通过两人。小明过桥需要 1 分钟，爸爸需要 2 分钟，弟弟需要 3 分钟，妈妈需要 6 分钟，爷爷需要 18 分钟，两人一起过桥时时间按速度较慢者过桥时间算。他们只有">
-
-
-
-
-
 
   <link rel="canonical" href="https://www.narsi.me/2013/09/12/cross-bridge/"/>
 
 
 
-<script type="text/javascript" id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
-</script>
+
 
   <title>过桥问题 | Narsi</title>
   
@@ -137,37 +136,9 @@
 
 
 
-
-  <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
-
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
-
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
-  </style>
-</noscript>
-
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -178,14 +149,12 @@
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"> 
-
-<div class="site-brand-wrapper">
+      <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Narsi</span>
         <span class="logo-line-after"><i></i></span>
@@ -197,7 +166,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
+    <button>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -212,49 +181,54 @@
     <ul id="menu" class="menu">
       
         
-        
-          
-  <li class="menu-item menu-item-home">
-    <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
-</li>
-
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
       
         
-        
-          
-  <li class="menu-item menu-item-categories">
-    <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
-</li>
-
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
       
         
-        
-          
-  <li class="menu-item menu-item-archives">
-    <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
-</li>
-
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
       
         
-        
-          
-  <li class="menu-item menu-item-books">
-    <a href="/books/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-book"></i> <br />读书</a>
-</li>
-
+        <li class="menu-item menu-item-books">
+          <a href="/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书
+          </a>
+        </li>
       
         
-        
-          
-  <li class="menu-item menu-item-movies">
-    <a href="/movies/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-movie"></i> <br />影视</a>
-</li>
-
+        <li class="menu-item menu-item-movies">
+          <a href="/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-film"></i> <br />
+            
+            影音
+          </a>
+        </li>
       
 
       
@@ -262,50 +236,16 @@
   
 
   
-    
-
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
-  
-
-  
 </nav>
-
-
-  
 
 
 
  </div>
     </header>
 
-    
-
-
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          
           <div id="content" class="content">
             
 
@@ -316,8 +256,6 @@
 
   
   
-  
-
   
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
@@ -354,10 +292,11 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-09-12T08:00:00+08:00">2013-09-12</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-09-12T08:00:00+08:00">
+                2013-09-12
+              </time>
             
 
-            
             
 
             
@@ -375,7 +314,11 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
 
                 
                 
@@ -500,9 +443,6 @@ T<sub>S1</sub> -  T<sub>S2</sub> = (T<sub>1</sub> + T<sub>3</sub>) - (T<sub>2</s
 
       
     </div>
-
-    
-
     
     
     
@@ -520,7 +460,7 @@ T<sub>S1</sub> -  T<sub>S2</sub> = (T<sub>1</sub> + T<sub>3</sub>) - (T<sub>2</s
 
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/WechatPay.jpeg" alt="Narsi 微信支付"/>
+        <img id="wechat_qr" src="/images/WechatPay.jpg" alt="Narsi 微信支付"/>
         <p>微信支付</p>
       </div>
     
@@ -535,20 +475,6 @@ T<sub>S1</sub> -  T<sub>S2</sub> = (T<sub>1</sub> + T<sub>3</sub>) - (T<sub>2</s
       </div>
     
 
-    
-      <div>
-        <ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>本文作者： </strong>Narsi</li>
-  <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    <a href="https://www.narsi.me/2013/09/12/cross-bridge/" title="过桥问题">https://www.narsi.me/2013/09/12/cross-bridge/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
-</ul>
-
-      </div>
     
 
     <footer class="post-footer">
@@ -606,6 +532,9 @@ T<sub>S1</sub> -  T<sub>S2</sub> = (T<sub>1</sub> + T<sub>3</sub>) - (T<sub>2</s
           </div>
           
 
+
+          
+
   
     <div class="comments" id="comments">
       
@@ -645,81 +574,66 @@ T<sub>S1</sub> -  T<sub>S2</sub> = (T<sub>1</sub> + T<sub>3</sub>) - (T<sub>2</s
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">26</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
+          <nav class="site-state motion-element">
 
+            
+              <div class="site-state-item site-state-posts">
               
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">2</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
+                <a href="/archives">
               
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
 
+            
               
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">5</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
               
-            </nav>
-          
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
 
           
 
           
             <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  <a href="https://github.com/supernarsi" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="mailto:narsihuang@gmail.com" target="_blank" title="Email" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>Email</a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="http://weibo.com/1633421434" target="_blank" title="Weibo" rel="external nofollow"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
-                  
-                </span>
-              
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/supernarsi" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:narsihuang@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/1633421434" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
             </div>
           
 
@@ -729,9 +643,6 @@ T<sub>S1</sub> -  T<sub>S2</sub> = (T<sub>1</sub> + T<sub>3</sub>) - (T<sub>2</s
           
           
 
-          
-            
-          
           
 
         </div>
@@ -758,16 +669,10 @@ T<sub>S1</sub> -  T<sub>S2</sub> = (T<sub>1</sub> + T<sub>3</sub>) - (T<sub>2</s
   <span class="author" itemprop="copyrightHolder">Narsi</span>
 
   
-
-  
 </div>
 
 
-  
-
-
-
-  <div class="powered-by">Power By <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
@@ -775,13 +680,12 @@ T<sub>S1</sub> -  T<sub>S2</sub> = (T<sub>1</sub> + T<sub>3</sub>) - (T<sub>2</s
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.0.6</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
 
 
         
-
 
 
 
@@ -829,11 +733,7 @@ T<sub>S1</sub> -  T<sub>S2</sub> = (T<sub>1</sub> + T<sub>3</sub>) - (T<sub>2</s
 
 
 
-
-
-
-
-
+  
 
 
 
@@ -853,6 +753,16 @@ T<sub>S1</sub> -  T<sub>S2</sub> = (T<sub>1</sub> + T<sub>3</sub>) - (T<sub>2</s
 
   
   
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
     <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   
 
@@ -861,33 +771,42 @@ T<sub>S1</sub> -  T<sub>S2</sub> = (T<sub>1</sub> + T<sub>3</sub>) - (T<sub>2</s
     <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
   
 
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.0.6"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.0.6"></script>
-
-
-
   
   
-
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.6"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.0.6"></script>
-
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.6"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
 
 
 
   
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
 
 
 
@@ -904,6 +823,7 @@ T<sub>S1</sub> -  T<sub>S2</sub> = (T<sub>1</sub> + T<sub>3</sub>) - (T<sub>2</s
 
 
   
+
 
 
 
@@ -929,7 +849,7 @@ T<sub>S1</sub> -  T<sub>S2</sub> = (T<sub>1</sub> + T<sub>3</sub>) - (T<sub>2</s
       <script type="text/javascript">
       function renderGitment(){
         var gitment = new Gitmint({
-            id: window.location.pathname,
+            id: window.location.pathname, 
             owner: 'supernarsi',
             repo: 'hexo-blog',
             
@@ -950,6 +870,7 @@ T<sub>S1</sub> -  T<sub>S2</sub> = (T<sub>1</sub> + T<sub>3</sub>) - (T<sub>2</s
       
       </script>
     
+
 
 
 
@@ -1022,40 +943,35 @@ T<sub>S1</sub> -  T<sub>S2</sub> = (T<sub>1</sub> + T<sub>3</sub>) - (T<sub>2</s
             var counter = results[0];
             counter.fetchWhenSave(true);
             counter.increment("time");
-            
             counter.save(null, {
               success: function(counter) {
-                
-                  var $element = $(document.getElementById(url));
-                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
-                
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
               },
               error: function(counter, error) {
                 console.log('Failed to save Visitor num, with error message: ' + error.message);
               }
             });
           } else {
-            
-              var newcounter = new Counter();
-              /* Set ACL */
-              var acl = new AV.ACL();
-              acl.setPublicReadAccess(true);
-              acl.setPublicWriteAccess(true);
-              newcounter.setACL(acl);
-              /* End Set ACL */
-              newcounter.set("title", title);
-              newcounter.set("url", url);
-              newcounter.set("time", 1);
-              newcounter.save(null, {
-                success: function(newcounter) {
-                  var $element = $(document.getElementById(url));
-                  $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-                },
-                error: function(newcounter, error) {
-                  console.log('Failed to create');
-                }
-              });
-            
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
           }
         },
         error: function(error) {
@@ -1081,17 +997,6 @@ T<sub>S1</sub> -  T<sub>S2</sub> = (T<sub>1</sub> + T<sub>3</sub>) - (T<sub>2</s
   
 
   
-  
-
-  
-  
-
-  
-
-
-  
-  
-
   
 
   
