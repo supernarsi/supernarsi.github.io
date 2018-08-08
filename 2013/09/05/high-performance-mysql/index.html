@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Narsi">
 <meta property="og:description" content="这几天在看《高性能 MySQL》这本书，目前看了一半左右，感觉很有收获，虽然有些内容还不太理解。这里按书的目录顺序记录下一些有用的知识点，加深记忆。 并发控制读写锁 数据库为解决并发冲突问题而设计了「锁」，「锁」分为「读锁」和「写锁」两类。「读锁」是共享的，即互相不阻塞，因此多个用户可以在同一时刻读取同一种资源而不会导致冲突；「写锁」是排他的，即会阻塞其余的「写锁」和「读锁」，因此可以保证在同一时">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-20T15:01:47.954Z">
+<meta property="og:updated_time" content="2018-08-08T09:29:00.514Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="高性能 MySQL 笔记">
 <meta name="twitter:description" content="这几天在看《高性能 MySQL》这本书，目前看了一半左右，感觉很有收获，虽然有些内容还不太理解。这里按书的目录顺序记录下一些有用的知识点，加深记忆。 并发控制读写锁 数据库为解决并发冲突问题而设计了「锁」，「锁」分为「读锁」和「写锁」两类。「读锁」是共享的，即互相不阻塞，因此多个用户可以在同一时刻读取同一种资源而不会导致冲突；「写锁」是排他的，即会阻塞其余的「写锁」和「读锁」，因此可以保证在同一时">
@@ -386,7 +386,7 @@
 <p><strong>死锁</strong></p>
 <p>死锁指多个事务在同一资源上相互占用，锁定对方占用的资源，而导致恶性循环的现象。解决方法包括死锁检测和死锁超时机制。InnoDB 遇到死锁会返回一个错误，处理方法是将持有最少行级锁的事务回滚。</p>
 <p><strong>MVCC</strong></p>
-<p>MVCC 可认为是行级锁的一个变种，但它在很多情况避免了加锁，因此减小了开销。InnoDB 的 MVCC 是通过两个隐藏的列来实现，一个保存行的创建时间，一个保存过期时间，都是用版本号来代替真实时间，每开始一个新事务，版本号递增。MVCC 只在 REPEATABLE READ 和 READ COMMITTED这两种隔离级别下工作。</p>
+<p>MVCC 可认为是行级锁的一个变种，但它在很多情况避免了加锁，因此减小了开销。InnoDB 的 MVCC 是通过两个隐藏的列来实现，一个保存行的创建时间，一个保存过期时间，都是用版本号来代替真实时间，每开始一个新事务，版本号递增。MVCC 只在 REPEATABLE READ 和 READ COMMITTED 这两种隔离级别下工作。</p>
 <p>SELECT 时，InnoDB 根据两个条件检查记录：1.版本早于当前事务的数据行，这样确保数据要么是在事务开始前已存在，要么是事务自身插入或修改过的；2.行的删除版本要么未定义，要么大于当前事务版本，这样确保数据在事务开始前未被删除。</p>
 <p>INSERT 时，InnoDB 为插入的每一行保存当前系统版本号作为行版本号。</p>
 <p>DELETE 时，InnoDB 为删除的每一行保存当前系统版本号作为行删除标识。</p>
@@ -406,10 +406,10 @@
 <li>支持事务。</li>
 <li>有自动崩溃恢复功能。</li>
 <li>锁粒度为行级锁，同时也导致开销高。</li>
-<li>采用 MVCC 来支持高并发，实现了四个标准隔离级别，默认级别是 REPEATABLE READ （可重复读）。</li>
+<li>采用 MVCC 来支持高并发，实现了四个标准隔离级别，默认级别是 REPEATABLE READ（可重复读）。</li>
 <li>通过间隙锁策略防止幻读。</li>
 <li>聚簇索引。</li>
-<li>改变InnoDb表结构会重建整个表，包括重建所有索引。</li>
+<li>改变 InnoDb 表结构会重建整个表，包括重建所有索引。</li>
 </ul>
 <p><strong>MyISAM</strong></p>
 <p>MyISAM 是 MySQL 5.1 及之前版本的默认存储引擎，主要有以下一些特点：</p>
@@ -418,7 +418,7 @@
 <li>崩溃后无法恢复。</li>
 <li>表锁，开销小，并发小。</li>
 <li>支持全文索引。</li>
-<li>每个表存储为数据文件(.MYD)和索引文件(.MYI)。</li>
+<li>每个表存储为数据文件（.MYD）和索引文件（.MYI）。</li>
 <li>对创建后不会再进行数据修改的表，可使用 MySQL 压缩表。</li>
 </ul>
 <p><strong>选择合适的存储引擎</strong></p>
@@ -463,11 +463,11 @@
 <h2 id="数据类型优化"><a href="#数据类型优化" class="headerlink" title="数据类型优化"></a>数据类型优化</h2><p>数据类型的选择应该遵守几个原则：</p>
 <ul>
 <li>尽量使用正确存储的最小数据类型。因为它们占用更少的磁盘、内存和 CPU 缓存。</li>
-<li>选择简单的数据类型。例如整型比字符串操作代价更低。注意应该使用 MySQL 内建的类型如 date， time 等来存储日期和时间，使用整型来存储 IP 地址。</li>
-<li>避免使用 NULL。通常情况下应该指定列为 NOT NULL。否则可能导致索引更复杂。</li>
+<li>选择简单的数据类型。例如整型比字符串操作代价更低。注意应该使用 MySQL 内建的类型如 date、time 等来存储日期和时间，使用整型来存储 IP 地址。</li>
+<li>避免使用 NULL。通常情况下应该指定列为 NOT NULL，否则可能导致索引更复杂。</li>
 </ul>
 <p><strong>整型</strong></p>
-<p>整数类型包括整数和实数存储。整数可以使用这几种类型：TINYINT， SMALLINT， MEDIUMINT， INT， BIGINT，他们分别使用8、16、24、32、64位存储空间，可存储值的范围从 -2<sup>N-1</sup> 到 2<sup>N-1</sup>-1 ，其中 N 表示存储空间的位数。如果使用 UNSIGNED 属性，可以使正数上限提高一倍。例如 TINYINT UNSIGNED 的存储范围是 0 到 255。整数类型的存储宽度，其实对于存储和计算并无意义，只是表示显示字符的长度，但计算还是以真是存储值为准。</p>
+<p>整数类型包括整数和实数存储。整数可以使用这几种类型：TINYINT、SMALLINT、MEDIUMINT、INT、BIGINT，他们分别使用 8、16、24、32、64 位存储空间，可存储值的范围从 -2<sup>N-1</sup> 到 2<sup>N-1</sup>-1，其中 N 表示存储空间的位数。如果使用 UNSIGNED 属性，可以使正数上限提高一倍。例如 TINYINT UNSIGNED 的存储范围是 0 到 255。整数类型的存储宽度，其实对于存储和计算并无意义，只是表示显示字符的长度，但计算还是以真是存储值为准。</p>
 <p>DECIMAL 用于存储精确的小数。MySQL 5.0 和更高版本将数字打包保存到一个二进制字符串中（每 4 个字节存 9 个数字）。例如 DECIMAL(18,9) 小数点两边将各存储 9 个数字，一共使用 9 个字节：小数点前的数字用 4 个字节，小数点后的数字用 4 个字节，小数点本身占 1 个字节。MySQL 5.0 及更高版本中 DECIAML 类型允许最多 65 个数字。</p>
 <p>浮点类型存储同样范围值时，比 DECIAML 使用更少的空间。FLOAT 使用 4 个字节存储，DOUBLE 使用 8 个字节。</p>
 <p>因为需要额外空间和计算开销，应在只对小数进行精确计算时才采用 DECIMAL 类型。</p>
@@ -477,7 +477,7 @@
 <p><strong>日期和时间</strong></p>
 <p>日期有两种类型：DATETIME 和 TIMESTAMP。</p>
 <p>DATETIME 可表示的范围从 1001 年到 9999 年，精度为秒。与时区无关，使用 8 字节存储。</p>
-<p>TIMESTAMP 保存从 1970 年 1 月 1 日零点以来的秒数，即时间戳。依赖时区，使用 4 字节存储。MySQL 提供 FROM_UNIXTIME() 函数将 Unix 时间戳转换为日期，提供 UNIX_TIMESTAMP() 函数把日期转换为 Unix 时间戳。TIMESTAMP 默认为 NOT NULL。</p>
+<p>TIMESTAMP 保存从 1970 年 1 月 1 日零点以来的秒数，即时间戳。依赖时区，使用 4 字节存储。MySQL 提供 FROM_UNIXTIME() 函数将 UNIX 时间戳转换为日期，提供 UNIX_TIMESTAMP() 函数把日期转换为 Unix 时间戳。TIMESTAMP 默认为 NOT NULL。</p>
 <p><strong>范式</strong></p>
 <p>范式更新操作更快；更少的数据重复和冗余；范式化的表通常更小，可更好放于内存，操作更快；更少使用 DISTINCT 或者 GROUP 语句。</p>
 <p>反范式化可以将所有数据存于一张表，避免关联；更有效的索引策略。</p>
@@ -722,19 +722,19 @@
                   <span class="links-of-author-item">
                     <a href="https://github.com/supernarsi" target="_blank" title="GitHub">
                       
-                        <i class="fa fa-fw fa-github"></i></a>
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="mailto:narsihuang@gmail.com" target="_blank" title="E-Mail">
+                    <a href="mailto:narsihuang@gmail.com" target="_blank" title="Email">
                       
-                        <i class="fa fa-fw fa-envelope"></i></a>
+                        <i class="fa fa-fw fa-envelope"></i>Email</a>
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="http://weibo.com/1633421434" target="_blank" title="Weibo">
+                    <a href="https://weibo.com/supernarsi" target="_blank" title="Weibo">
                       
-                        <i class="fa fa-fw fa-weibo"></i></a>
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
                   </span>
                 
             </div>
