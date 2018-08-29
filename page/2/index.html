@@ -2,15 +2,27 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 <meta name="theme-color" content="#222">
+
+
+
 
 
 
@@ -38,10 +50,6 @@
 
 
 
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
 
 
 
@@ -50,45 +58,25 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.0">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.0">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.0">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT, Narsi" />
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.0" color="#222">
 
 
 
 
 
 
-
-
-
-
-<meta name="description" content="I was human.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Narsi">
-<meta property="og:url" content="https://www.narsi.me/page/2/index.html">
-<meta property="og:site_name" content="Narsi">
-<meta property="og:description" content="I was human.">
-<meta property="og:locale" content="zh-Hans">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Narsi">
-<meta name="twitter:description" content="I was human.">
 
 
 
@@ -97,15 +85,13 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '5.1.4',
+    version: '6.4.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -117,12 +103,36 @@
 </script>
 
 
+  
+
+
+
+
+  <meta name="description" content="I was human.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Narsi">
+<meta property="og:url" content="https://www.narsi.me/page/2/index.html">
+<meta property="og:site_name" content="Narsi">
+<meta property="og:description" content="I was human.">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Narsi">
+<meta name="twitter:description" content="I was human.">
+
+
+
+
+
 
   <link rel="canonical" href="https://www.narsi.me/page/2/"/>
 
 
 
-
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
 
   <title>Narsi</title>
   
@@ -134,9 +144,37 @@
 
 
 
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -153,19 +191,17 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Narsi</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      
-        <h1 class="site-subtitle" itemprop="description"></h1>
-      
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -173,65 +209,53 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
         
-        <li class="menu-item menu-item-books">
-          <a href="/books" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
-            
-            读书
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-movies">
-          <a href="/movies" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-film"></i> <br />
-            
-            影视
-          </a>
-        </li>
-      
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-books">
+    <a href="/books" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-book"></i> <br />读书</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-movies">
+    <a href="/movies" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-film"></i> <br />影视</a>
+  </li>
 
       
+      
     </ul>
+  
+
+  
+    
+
   
 
   
@@ -239,12 +263,20 @@
 
 
 
- </div>
+  
+
+
+
+</div>
     </header>
+
+    
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
@@ -257,6 +289,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -266,7 +300,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Narsi">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="I was human.">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -279,13 +313,23 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">
+          <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2013/08/27/zen-coding/" itemprop="url">禅意的编程——Emmet</a></h2>
+                <a class="post-title-link" href="/2013/08/27/zen-coding/" itemprop="url">
+                  禅意的编程 —— Emmet
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -293,13 +337,30 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-08-27T00:00:00Z">
-                2013-08-27
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2013-08-27 00:00:00" itemprop="dateCreated datePublished" datetime="2013-08-27T00:00:00Z">2013-08-27</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-08-29 09:22:05" itemprop="dateModified" datetime="2018-08-29T09:22:05Z">2018-08-29</time>
+              
             
           </span>
 
@@ -315,11 +376,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 
                 
                 
@@ -333,13 +390,13 @@
 
           
           
-             <span id="/2013/08/27/zen-coding/" class="leancloud_visitors" data-flag-title="禅意的编程——Emmet">
+             <span id="/2013/08/27/zen-coding/" class="leancloud_visitors" data-flag-title="禅意的编程 —— Emmet">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
+                 <span class="post-meta-item-text">阅读次数：</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -378,6 +435,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -416,6 +476,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -425,7 +487,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Narsi">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="I was human.">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -438,13 +500,23 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">
+          <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2013/08/25/jekyll/" itemprop="url">Jekyll 笔记</a></h2>
+                <a class="post-title-link" href="/2013/08/25/jekyll/" itemprop="url">
+                  Jekyll 笔记
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -452,13 +524,30 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-08-25T00:00:00Z">
-                2013-08-25
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2013-08-25 00:00:00" itemprop="dateCreated datePublished" datetime="2013-08-25T00:00:00Z">2013-08-25</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-03-15 13:31:22" itemprop="dateModified" datetime="2018-03-15T13:31:22Z">2018-03-15</time>
+              
             
           </span>
 
@@ -474,11 +563,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 
                 
                 
@@ -498,7 +583,7 @@
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
+                 <span class="post-meta-item-text">阅读次数：</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -540,6 +625,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -578,6 +666,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -587,7 +677,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Narsi">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="I was human.">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -600,13 +690,23 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">
+          <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2013/07/07/to-you/" itemprop="url">远方</a></h2>
+                <a class="post-title-link" href="/2013/07/07/to-you/" itemprop="url">
+                  远方
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -614,13 +714,30 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-07-07T00:00:00Z">
-                2013-07-07
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2013-07-07 00:00:00" itemprop="dateCreated datePublished" datetime="2013-07-07T00:00:00Z">2013-07-07</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-08-29 09:20:45" itemprop="dateModified" datetime="2018-08-29T09:20:45Z">2018-08-29</time>
+              
             
           </span>
 
@@ -636,11 +753,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/杂文/" itemprop="url" rel="index">
-                    <span itemprop="name">杂文</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/杂文/" itemprop="url" rel="index"><span itemprop="name">杂文</span></a></span>
 
                 
                 
@@ -660,7 +773,7 @@
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
+                 <span class="post-meta-item-text">阅读次数：</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -686,10 +799,14 @@
 
       
         
-          那日你说要去远方，我默然点头，送你一个拥抱，算作道别。本将天涯两边，近不如远，还可以多些借口来矫情怀念。但真到分别，又止不住悔恨道别太匆匆，止不住懊恼远方太遥远。来不及讲的那些话，就把它们跟流走的时光一起，埋进回忆里。虽没能够陪君醉笑三千场，也未曾······
+          
+          那日你说要去远方，我默然点头，送你一个拥抱，算作道别。
+本将天涯两边，近不如远，还可以多些借口矫情怀念。但真到分别，又止不住悔恨道别太匆匆，止不住懊恼远方太遥远。来不及讲的那些话，就把它们跟流走的时光一起，埋进回忆里。
+虽没能够陪君醉笑三千场，也未曾共话离觞。倒是说不上遗憾，嘴上借口着总得有人醒着，
+          ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2013/07/07/to-you/">
+            <a class="btn" href="/2013/07/07/to-you/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -697,6 +814,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -735,6 +855,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -744,7 +866,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Narsi">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="I was human.">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -757,13 +879,23 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">
+          <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2013/04/26/Miss-Chen/" itemprop="url">陈小姐</a></h2>
+                <a class="post-title-link" href="/2013/04/26/Miss-Chen/" itemprop="url">
+                  陈小姐
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -771,13 +903,30 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-04-26T00:00:00Z">
-                2013-04-26
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2013-04-26 00:00:00" itemprop="dateCreated datePublished" datetime="2013-04-26T00:00:00Z">2013-04-26</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-08-29 09:20:40" itemprop="dateModified" datetime="2018-08-29T09:20:40Z">2018-08-29</time>
+              
             
           </span>
 
@@ -793,11 +942,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/杂文/" itemprop="url" rel="index">
-                    <span itemprop="name">杂文</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/杂文/" itemprop="url" rel="index"><span itemprop="name">杂文</span></a></span>
 
                 
                 
@@ -817,7 +962,7 @@
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
+                 <span class="post-meta-item-text">阅读次数：</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -843,10 +988,14 @@
 
       
         
-          陈小姐二十二岁，开心时笑起来特美，仿佛能让人忘掉忧愁。他跟我诉苦，说思念陈小姐，希望留下点什么纪念，却总也找不到合适的寄托。于是便跟我讲述了他们的故事。故事很短，记下来算作一种慰藉。和陈小姐的相遇算是机缘，他笑说一定是上辈子未尽的缘分，陈小姐也不反······
+          
+          陈小姐二十二岁，开心时笑起来特美，仿佛能让人忘掉忧愁。
+他跟我诉苦，说思念陈小姐，希望留下点什么纪念，却总也找不到合适的寄托。于是便跟我讲述了他们的故事。故事很短，记下来算作一种慰藉。
+和陈小姐的相遇算是机缘，他笑说一定是上辈子未尽的缘分，陈小姐也不反驳，只露出另一种醉人的微笑给予回应。大约一个月前
+          ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2013/04/26/Miss-Chen/">
+            <a class="btn" href="/2013/04/26/Miss-Chen/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -854,6 +1003,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -892,6 +1044,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -901,7 +1055,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Narsi">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="I was human.">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -914,13 +1068,23 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">
+          <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2013/04/19/li/" itemprop="url">李美丽</a></h2>
+                <a class="post-title-link" href="/2013/04/19/li/" itemprop="url">
+                  李美丽
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -928,13 +1092,30 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-04-19T00:00:00Z">
-                2013-04-19
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2013-04-19 00:00:00" itemprop="dateCreated datePublished" datetime="2013-04-19T00:00:00Z">2013-04-19</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-08-29 09:20:37" itemprop="dateModified" datetime="2018-08-29T09:20:37Z">2018-08-29</time>
+              
             
           </span>
 
@@ -950,11 +1131,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/杂文/" itemprop="url" rel="index">
-                    <span itemprop="name">杂文</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/杂文/" itemprop="url" rel="index"><span itemprop="name">杂文</span></a></span>
 
                 
                 
@@ -974,7 +1151,7 @@
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
+                 <span class="post-meta-item-text">阅读次数：</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -1000,10 +1177,13 @@
 
       
         
-          故事是听 C 君讲的，当然他也说是从别处听来，至于故事的源头怕已无从考究，也许起初只是一个玩笑。流言蜚语大抵如此，抓住一个线头，便越扯越远，几番润色后，玩笑也成了栩栩如生的故事。故事讲的是一对姐妹，姐姐李美丽大妹妹李聪明三岁。说是姐姐出生时，她爸老李······
+          
+          故事是听 C 君讲的，当然他也说是从别处听来，至于故事的源头怕已无从考究，也许起初只是一个玩笑。流言蜚语大抵如此，抓住一个线头，便越扯越远，几番润色后，玩笑也成了栩栩如生的故事。
+故事讲的是一对姐妹，姐姐李美丽大妹妹李聪明三岁。说是姐姐出生时，她爸老李还没想好孩子的名字，直到见着巴掌大的小宝贝美丽可
+          ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2013/04/19/li/">
+            <a class="btn" href="/2013/04/19/li/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1011,6 +1191,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -1049,6 +1232,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -1058,7 +1243,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Narsi">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="I was human.">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -1071,13 +1256,23 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">
+          <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2012/11/28/far-away/" itemprop="url">遥寄</a></h2>
+                <a class="post-title-link" href="/2012/11/28/far-away/" itemprop="url">
+                  遥寄
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1085,13 +1280,30 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2012-11-28T00:00:00Z">
-                2012-11-28
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2012-11-28 00:00:00" itemprop="dateCreated datePublished" datetime="2012-11-28T00:00:00Z">2012-11-28</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-08-29 09:20:31" itemprop="dateModified" datetime="2018-08-29T09:20:31Z">2018-08-29</time>
+              
             
           </span>
 
@@ -1107,11 +1319,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/杂文/" itemprop="url" rel="index">
-                    <span itemprop="name">杂文</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/杂文/" itemprop="url" rel="index"><span itemprop="name">杂文</span></a></span>
 
                 
                 
@@ -1131,7 +1339,7 @@
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
+                 <span class="post-meta-item-text">阅读次数：</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -1157,10 +1365,13 @@
 
       
         
-          你缓缓展开面前那一方信笺，欲将近来杂乱的思绪慢慢铺陈。但那一潭情绪混得太浓，怎样也引不出一道沟渠，将它化为笔墨，你就这样楞楞地盯着纸上那寥寥数笔，任思绪在胸口冲撞了百十个来回，终于也只是落下「诸事安康」四字，此刻你大约是真切地感受到了何谓「欲说还······
+          
+          你缓缓展开面前那一方信笺，欲将近来杂乱的思绪慢慢铺陈。但那一潭情绪混得太浓，怎样也引不出一道沟渠，将它化为笔墨，你就这样楞楞地盯着纸上那寥寥数笔，任思绪在胸口冲撞了百十个来回，终于也只是落下「诸事安康」四字，此刻你大约是真切地感受到了何谓「欲说还休，却道天凉好个秋。」
+字句顿下了，画面却在眼前升腾开
+          ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2012/11/28/far-away/">
+            <a class="btn" href="/2012/11/28/far-away/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1168,6 +1379,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -1206,6 +1420,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -1215,7 +1431,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Narsi">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="I was human.">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -1228,13 +1444,23 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">
+          <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2012/09/16/dawn/" itemprop="url">黎明</a></h2>
+                <a class="post-title-link" href="/2012/09/16/dawn/" itemprop="url">
+                  黎明
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1242,13 +1468,30 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2012-09-16T00:00:00Z">
-                2012-09-16
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2012-09-16 00:00:00" itemprop="dateCreated datePublished" datetime="2012-09-16T00:00:00Z">2012-09-16</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-08-29 09:20:27" itemprop="dateModified" datetime="2018-08-29T09:20:27Z">2018-08-29</time>
+              
             
           </span>
 
@@ -1264,11 +1507,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/杂文/" itemprop="url" rel="index">
-                    <span itemprop="name">杂文</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/杂文/" itemprop="url" rel="index"><span itemprop="name">杂文</span></a></span>
 
                 
                 
@@ -1288,7 +1527,7 @@
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
+                 <span class="post-meta-item-text">阅读次数：</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -1314,10 +1553,13 @@
 
       
         
-          至今老李想起十年前那场「运动」仍觉心悸，从他口中探出那些尘封的影像着实费了好些功夫。小赵说他可以理解，就像他小时挨多了针头留下心理阴影，以致看到尖物就紧张，可老大偏派他去采稿大头针厂质量造假事件时他的痛苦一样。由于交通管制，单双限行，路上根本打不到······
+          
+          至今老李想起十年前那场「运动」仍觉心悸，从他口中探出那些尘封的影像着实费了好些功夫。小赵说他可以理解，就像他小时挨多了针头留下心理阴影，以致看到尖物就紧张，可老大偏派他去采稿大头针厂质量造假事件时他的痛苦一样。
+由于交通管制，单双限行，路上根本打不到出租，小赵只得一路小跑回编辑室赶工——「下班前还没
+          ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2012/09/16/dawn/">
+            <a class="btn" href="/2012/09/16/dawn/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1325,6 +1567,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -1363,6 +1608,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -1372,7 +1619,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Narsi">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="I was human.">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -1385,13 +1632,23 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">
+          <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2012/06/24/times-of-lushanroad/" itemprop="url">麓山南路</a></h2>
+                <a class="post-title-link" href="/2012/06/24/times-of-lushanroad/" itemprop="url">
+                  麓山南路
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1399,13 +1656,30 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2012-06-24T00:00:00Z">
-                2012-06-24
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2012-06-24 00:00:00" itemprop="dateCreated datePublished" datetime="2012-06-24T00:00:00Z">2012-06-24</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-08-29 09:19:27" itemprop="dateModified" datetime="2018-08-29T09:19:27Z">2018-08-29</time>
+              
             
           </span>
 
@@ -1421,11 +1695,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/杂文/" itemprop="url" rel="index">
-                    <span itemprop="name">杂文</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/杂文/" itemprop="url" rel="index"><span itemprop="name">杂文</span></a></span>
 
                 
                 
@@ -1445,7 +1715,7 @@
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
+                 <span class="post-meta-item-text">阅读次数：</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -1471,10 +1741,13 @@
 
       
         
-          清晰的记得，当我最后一个离开，最后一次小心翼翼地合上那扇吱呀作响的老旧木门时，心头巨大的失落感。没有了外面傻逼兮兮的喊楼，也没有泪眼婆娑的拥抱，甚至没有一句深情的保重，原以为避开这些矫情的场面，就能避开恼人的离情别绪，却不想逃开了伤感，逃不开失落。特······
+          
+          清晰的记得，当我最后一个离开，最后一次小心翼翼地合上那扇吱呀作响的老旧木门时，心头巨大的失落感。没有了外面傻逼兮兮的喊楼，也没有泪眼婆娑的拥抱，甚至没有一句深情的保重，原以为避开这些矫情的场面，就能避开恼人的离情别绪，却不想逃开了伤感，逃不开失落。
+特意提早了离开那短暂的「家」，实在很难一个人面对曾
+          ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2012/06/24/times-of-lushanroad/">
+            <a class="btn" href="/2012/06/24/times-of-lushanroad/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1482,6 +1755,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -1520,6 +1796,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -1529,7 +1807,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Narsi">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="I was human.">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -1542,13 +1820,23 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">
+          <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2012/02/13/bitter/" itemprop="url">苦味</a></h2>
+                <a class="post-title-link" href="/2012/02/13/bitter/" itemprop="url">
+                  苦味
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1556,13 +1844,30 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2012-02-13T00:00:00Z">
-                2012-02-13
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2012-02-13 00:00:00" itemprop="dateCreated datePublished" datetime="2012-02-13T00:00:00Z">2012-02-13</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-08-29 09:20:22" itemprop="dateModified" datetime="2018-08-29T09:20:22Z">2018-08-29</time>
+              
             
           </span>
 
@@ -1578,11 +1883,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/杂文/" itemprop="url" rel="index">
-                    <span itemprop="name">杂文</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/杂文/" itemprop="url" rel="index"><span itemprop="name">杂文</span></a></span>
 
                 
                 
@@ -1602,7 +1903,7 @@
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
+                 <span class="post-meta-item-text">阅读次数：</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -1628,10 +1929,14 @@
 
       
         
-          近来一直在服中药，导致食不觉味，饮不觉饴，口中还常余有苦味。久而久之，非但没习惯这苦味，反倒愈发恶心起来，服药后更是苦味弥散，感觉直冲心肺，要捣毁内脏似的。被逼无奈，想出了个稍能缓解的笨办法：每次服药之后，都猛灌凉水漱口。这样反复洗漱几次，倒也能把······
+          
+          近来一直在服中药，导致食不觉味，饮不觉饴，口中还常余有苦味。
+久而久之，非但没习惯这苦味，反倒愈发恶心起来，服药后更是苦味弥散，感觉直冲心肺，要捣毁内脏似的。被逼无奈，想出了个稍能缓解的笨办法：每次服药之后，都猛灌凉水漱口。这样反复洗漱几次，倒也能把口中苦味祛之八九，总算是解了一愁。
+然而口中苦味易
+          ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2012/02/13/bitter/">
+            <a class="btn" href="/2012/02/13/bitter/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1639,6 +1944,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -1677,6 +1985,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -1686,7 +1996,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Narsi">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="I was human.">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -1699,13 +2009,23 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">
+          <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2012/02/08/samsara/" itemprop="url">轮回</a></h2>
+                <a class="post-title-link" href="/2012/02/08/samsara/" itemprop="url">
+                  轮回
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1713,13 +2033,30 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2012-02-08T00:00:00Z">
-                2012-02-08
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2012-02-08 00:00:00" itemprop="dateCreated datePublished" datetime="2012-02-08T00:00:00Z">2012-02-08</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-08-29 09:20:18" itemprop="dateModified" datetime="2018-08-29T09:20:18Z">2018-08-29</time>
+              
             
           </span>
 
@@ -1735,11 +2072,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/杂文/" itemprop="url" rel="index">
-                    <span itemprop="name">杂文</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/杂文/" itemprop="url" rel="index"><span itemprop="name">杂文</span></a></span>
 
                 
                 
@@ -1759,7 +2092,7 @@
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
+                 <span class="post-meta-item-text">阅读次数：</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -1785,10 +2118,16 @@
 
       
         
-          故事似乎都有起点终点，可到底该怎么去分辨？如同该怎么去分辨所谓的生与死。谁说生，不正是死的开始？或者死，不是换作另一种长久的生的存在？这是一个苦命秀才的故事。这里是故事的开始，也是故事的结束。穷酸秀才已然潦倒至极。甚至或许没几天性命了，但旁人都不关心······
+          
+          『一』
+故事似乎都有起点终点，可到底该怎么去分辨？如同该怎么去分辨所谓的生与死。谁说生，不正是死的开始？或者死，不是换作另一种长久的生的存在？
+这是一个苦命秀才的故事。这里是故事的开始，也是故事的结束。
+『二』
+穷酸秀才已然潦倒至极。甚至或许没几天性命了，但旁人都不关心，也没几个人在意了。大家似乎都
+          ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2012/02/08/samsara/">
+            <a class="btn" href="/2012/02/08/samsara/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1796,6 +2135,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -1830,15 +2172,12 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
 
           </div>
-          
-
-
           
 
         </div>
@@ -1866,69 +2205,84 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">Narsi</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <p class="site-description motion-element" itemprop="description">I was human.</p>
           </div>
 
-          <nav class="site-state motion-element">
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives">
+                
+                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
 
-            
-              <div class="site-state-item site-state-posts">
               
-                <a href="/archives">
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
               
-                  <span class="site-state-item-count">26</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
 
-            
               
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
               
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
-            
-
-          </nav>
+            </nav>
+          
 
           
 
           
             <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/supernarsi" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="mailto:narsihuang@gmail.com" target="_blank" title="Email">
-                      
-                        <i class="fa fa-fw fa-envelope"></i>Email</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://weibo.com/supernarsi" target="_blank" title="Weibo">
-                      
-                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
-                  </span>
-                
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/supernarsi" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:narsihuang@gmail.com" target="_blank" title="Email"><i class="fa fa-fw fa-envelope"></i>Email</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://weibo.com/supernarsi" target="_blank" title="Weibo"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  
+                </span>
+              
             </div>
           
 
@@ -1938,6 +2292,9 @@
           
           
 
+          
+            
+          
           
 
         </div>
@@ -1958,16 +2315,20 @@
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
+  <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Narsi</span>
 
   
+
+  
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
 
 
 
@@ -1975,12 +2336,13 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.0</div>
 
 
 
 
         
+
 
 
 
@@ -2009,7 +2371,10 @@
     
 
     
+	
+    
 
+    
   </div>
 
   
@@ -2028,7 +2393,11 @@
 
 
 
-  
+
+
+
+
+
 
 
 
@@ -2048,16 +2417,6 @@
 
   
   
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
     <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   
 
@@ -2066,18 +2425,13 @@
     <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
   
 
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
 
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
 
 
 
@@ -2089,21 +2443,7 @@
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
 
 
 
@@ -2111,10 +2451,7 @@
 
 
 
-
-
   
-
 
 
 
@@ -2143,7 +2480,6 @@
 
 
 
-
   
 
 
@@ -2153,11 +2489,9 @@
   
 
   
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script>AV.initialize("uaN0KUSHDPuMb6TgULk5M1M1-gzGzoHsz", "YlEH6b2EEw1zjbTDwK5lDUUD");</script>
   <script>
+    
     function showTime(Counter) {
-      var query = new AV.Query(Counter);
       var entries = [];
       var $visitors = $(".leancloud_visitors");
 
@@ -2165,9 +2499,8 @@
         entries.push( $(this).attr("id").trim() );
       });
 
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { "$in": entries } }) })
+        .done(function ({ results }) {
           var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
 
           if (results.length === 0) {
@@ -2177,8 +2510,8 @@
 
           for (var i = 0; i < results.length; i++) {
             var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
+            var url = item.url;
+            var time = item.time;
             var element = document.getElementById(url);
 
             $(element).find(COUNT_CONTAINER_REF).text(time);
@@ -2192,68 +2525,33 @@
             }
           }
         })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
+        .fail(function ({ responseJSON }) {
+          console.log("LeanCloud Counter Error: " + responseJSON.code + " " + responseJSON.error);
         });
     }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
+    
 
     $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + "uaN0KUSHDPuMb6TgULk5M1M1-gzGzoHsz")
+        .done(function ({ api_server }) {
+          var Counter = function (method, url, data) {
+            return $.ajax({
+              method: method,
+              url: `https://${api_server}/1.1${url}`,
+              headers: {
+                'X-LC-Id': "uaN0KUSHDPuMb6TgULk5M1M1-gzGzoHsz",
+                'X-LC-Key': "YlEH6b2EEw1zjbTDwK5lDUUD",
+                'Content-Type': 'application/json',
+              },
+              data: data,
+            });
+          };
+          
+          if ($('.post-title-link').length >= 1) {
+            showTime(Counter);
+          }
+          
+        })
     });
   </script>
 
@@ -2268,27 +2566,40 @@
 
   
   
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
   
 
+  
+
+
+  
+  
+
+  
+
+  
+
+  
 
   
 
