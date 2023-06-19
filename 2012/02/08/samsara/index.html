@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><!-- hexo injector head_begin start --><style type="text/css">.douban-card-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-height: 400px;
+}
+
+.douban-card {
+    display: flex;
+    margin: 30px 10px;
+    padding: 15px;
+    border-radius: 15px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+.douban-card:hover {
+    text-decoration: none;
+}
+
+.douban-card-bgimg {
+    position: absolute;
+    width: 115%;
+    height: 115%;
+    filter: blur(15px) brightness(0.6);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.douban-card-img {
+    position: relative;
+    height: 130px;
+    width: 80px;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.douban-card-left:hover .douban-card-img {
+    filter: blur(5px) brightness(0.6);
+    transform: perspective(800px) rotateX(180deg);
+}
+
+.douban-card-left .douban-card-img {
+    transition: all 500ms ease;
+}
+
+.douban-card-left {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.douban-card-left .douban-card-status {
+    height: 130px;
+    width: 80px;
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 30%;
+    transform: rotateX(180deg);
+    backface-visibility: hidden;
+    transition: all 500ms ease;
+}
+
+.douban-card-left:hover .douban-card-status {
+    transform: perspective(800px) rotateX(0deg);
+}
+
+.douban-card-right {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+    font-size: 16px;
+    font-family: "Courier New", Courier, monospace;
+    line-height: 1.3;
+    color: antiquewhite;
+}
+
+.douban-card-item {
+    margin-top: 4px;
+}
+</style><!-- hexo injector head_begin end -->
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.narsi.me","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.17.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="故事似乎都有起点终点，可到底该怎么去分辨？如同该怎么去分辨所谓的生与死。谁说生，不正是死的开始？或者死，不是换作另一种长久的生的存在？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="轮回">
+<meta property="og:url" content="https://blog.narsi.me/2012/02/08/samsara/index.html">
+<meta property="og:site_name" content="Narsi">
+<meta property="og:description" content="故事似乎都有起点终点，可到底该怎么去分辨？如同该怎么去分辨所谓的生与死。谁说生，不正是死的开始？或者死，不是换作另一种长久的生的存在？">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2012-02-07T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-01-31T06:30:03.448Z">
+<meta property="article:author" content="Narsi">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://blog.narsi.me/2012/02/08/samsara/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.narsi.me/2012/02/08/samsara/","path":"/2012/02/08/samsara/","title":"轮回"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>轮回 | Narsi</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Narsi</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-books"><a href="/books" rel="section"><i class="fa fa-book fa-fw"></i>books</a></li><li class="menu-item menu-item-movies"><a href="/movies" rel="section"><i class="fa fa-film fa-fw"></i>movies</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Narsi</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://telegram.me/supernarsi" title="Telegram → https:&#x2F;&#x2F;telegram.me&#x2F;supernarsi" rel="noopener me" target="_blank"><i class="fab fa-telegram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/supernarsi" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;supernarsi" rel="noopener me" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/supernarsi" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;supernarsi" rel="noopener me" target="_blank"><i class="fab fa-weibo fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/supernarsi" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;supernarsi" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:narsihuang@gmail.com" title="E-Mail → mailto:narsihuang@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.narsi.me/2012/02/08/samsara/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Narsi">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Narsi">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="轮回 | Narsi">
+      <meta itemprop="description" content="故事似乎都有起点终点，可到底该怎么去分辨？如同该怎么去分辨所谓的生与死。谁说生，不正是死的开始？或者死，不是换作另一种长久的生的存在？">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          轮回
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2012-02-08 00:00:00" itemprop="dateCreated datePublished" datetime="2012-02-08T00:00:00+08:00">2012-02-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9D%82%E6%96%87/" itemprop="url" rel="index"><span itemprop="name">杂文</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2012/02/08/samsara/" class="post-meta-item leancloud_visitors" data-flag-title="轮回" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2012/02/08/samsara/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="/2012/02/08/samsara/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+            <div class="post-description">故事似乎都有起点终点，可到底该怎么去分辨？如同该怎么去分辨所谓的生与死。谁说生，不正是死的开始？或者死，不是换作另一种长久的生的存在？</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p><strong><center>『一』</center></strong></p>
+<p>故事似乎都有起点终点，可到底该怎么去分辨？如同该怎么去分辨所谓的生与死。谁说生，不正是死的开始？或者死，不是换作另一种长久的生的存在？</p>
+<p>这是一个苦命秀才的故事。这里是故事的开始，也是故事的结束。</p>
+<p><strong><center>『二』</center></strong></p>
+<p>穷酸秀才已然潦倒至极。甚至或许没几天性命了，但旁人都不关心，也没几个人在意了。大家似乎都已习惯了将他遗忘，也包括秀才自己。</p>
+<p><strong><center>『三』</center></strong></p>
+<p>秀才的生活还在继续着，他似乎没发现自己现在的生活境况有多么的糟糕，又或者他已经不在乎那些基于生存的表面的东西。他总觉得自己是在追求更高层次的感悟。他几乎不与别人交谈了，总是一个人活在古书里，和先贤们秉烛夜谈说古论今。先贤们倒也不嫌他性格怪异自恃清高，来者不拒，秀才不感觉累，他们就继续奉陪阔论。</p>
+<p>要说秀才已失了对生活的渴望，决然是不会的。他永远保留着心底的热忱，梦想也好憧憬也罢，秀才一直把心底那方寸之地保护得很好。所谓生活的磨难是绝不会沾污那里的。</p>
+<p>有人问过秀才他是否是在坚守什么信念，不然生活的担子早就压得他为五斗米折了腰了。可他没跟别人提及过，旁人也都猜测秀才无非就是死脑筋攀清高。别人要他弯着腰吃饭他愣是得挺直了腰板告诉人家他不吃饭。</p>
+<p>至于秀才所坚守的所谓信念，不过是些修身齐家治国之类迂腐不化的东西。当然，谁也不知道确切的答案，也许秀才自己也不明白，几千年来那些文弱书生骨子里的正气到底怎么冒出来的。</p>
+<p><strong><center>『四』</center></strong></p>
+<p>你所正在经历的，乃至你所能想到的，都永远不会是最糟糕的情况。</p>
+<p>伴了秀才多年的妻子终于受不了这样清苦的日子和怪脾气的秀才，自行出走了。也没留下一语一信，让秀才都有她是凭空消失的错觉。秀才努力想了想跟妻子最后的一次对话是什么内容，很长时间后他发现这是徒劳，他也不知道为什么根本没法安下心来去想妻子，每每打算回忆旧事，却总被脑海里「无稽之言勿听，弗询之谋勿庸。」「大学之道，在明明德······」之类乱七八糟的声响打断。以至不久后，秀才已不大能记起妻子的容貌了。再后来，甚至开始怀疑是否曾经有这样一个人出现在自己身边过。</p>
+<p>老天似乎忘了秀才这个人，也可能是也被他那怪异脾性给气蒙了，便遗弃了这块朽木。总之，几乎所有人都看得出来，这样下去秀才的情况必然会愈发糟糕，除了秀才自己。</p>
+<p><strong><center>『五』</center></strong></p>
+<p>似乎久而久之，秀才愈发习惯了这般清苦。自是玩味出许多苦中之乐。不必忧心凡尘俗事，不必烦恼前程仕途，更不必苦心党同伐异，因为他现在只用活在自己的世界里。读读圣贤，翻翻古籍，兴致所至，还可入林下水，戏禽捕鱼，好不逍遥，所谓清平乐，大抵如此。</p>
+<p>隐隐觉得生活就会被这样慢慢的消磨，磨掉秉性，磨得自己面目全非。秀才试过挣扎，他自然不是那样肯轻易安于平庸的人。可总感到有股暗处的力量在与自己作对。</p>
+<p>他知道那是什么，他把一切归咎为生活的磨砺。经得起考验，才成得了圆满。秀才这样说服自己的时候，多少是带着许多无奈的。</p>
+<p><strong><center>『六』</center></strong></p>
+<p>几月变迁后，秀才竟是到食不果腹的地步了。终究要怪他那怪戾性情，眼中见不得一点淤泥。因此再节衣缩食，也不肯接受各样的接济，他总觉得他们的一餐一粒都来得不足清白，这倒是难为了好些实在想出把力的性情中人。</p>
+<p>其实若说来，秀才是不至于此田地的。</p>
+<p>长久以来，总有些个或富贵或通达的亲戚故友。且无论是貌合神离、阳奉阴违，哪怕都明知彼此不待见，如若秀才肯放下心里的一些芥蒂，放下那股子自诩的正气，他人碍于脸面，混口饭，倒是不难的。如若再肯低眉顺眼些，前路定不是如此般暗淡。可该怪谁？偏生了这股子傲气劲，自诩清高不甘同流。总是在心里嘀咕着什么要为官治世，要河清海晏，还妄想恩泽四方！殊不思这死榆木性子，却正是他的命门。</p>
+<p><strong><center>『七』</center></strong></p>
+<p>事实总无常，风云不测，祸福难料。这世间实在难有一气呵成之事，顺也好逆也罢，依渠而湍的生活总会遇上大大小小的峰回急转，弄得所有人都手忙脚乱不知所措。</p>
+<p>某一日，秀才竟然去会了财大气粗、权倾一方的赵老爷。赵老爷无恶不作、无赃不贪，已然到了恶贯满盈的地步。可这赵老爷却有一个长处：慧眼识才。赵老爷不知从哪儿打听到了秀才的消息，断定了那秀才非等闲之辈，甚至向着不明就里的食客们吹嘘秀才是再世子房，王佐之才。还遣了气派十足的队伍去请秀才到府上做客，待以上宾礼。</p>
+<p>可赵老爷不知，他却正是秀才心中最为鄙夷的那类人之一。秀才穷酸日子熬过，不在乎多那一两顿山珍海味，琼浆玉露。暗自决定要煞赵老爷的威风。到得席上，起初众人还把酒言欢，三巡之后，秀才竟当众唱起诗来，什么不为五斗米折腰，什么不肯屈身事权贵，更甚者叫嚣着说要除了某些个霸权恶狗，就差点名道姓指着赵老爷数罪。赵老爷自是听明白了秀才的言外意，恼羞成怒却又不好发作，终于筵席了了而终不欢而散。秀才倒是酣畅了一把，可这冤仇却是自此结上了。</p>
+<p>日后，赵老爷想尽办法欺压秀才。谁都知道赵老爷权倾一方，是这儿的土皇上，实际的掌权人，自然谁也不敢得罪，这可苦了秀才。</p>
+<p><strong><center>『八』</center></strong></p>
+<p>但天也偶有掉馅饼的时候，当局之人却会觉得要归功于自己的坚持，终使老天开眼。</p>
+<p>半生坎坷的秀才真算是撞到了福星。前些天有人托来消息，说是秀才那位做县太爷的远房表姐的七舅老爷死了，老人家膝下无子，恐家族难续，临终之前愣是想起了这古怪木讷的穷酸秀才，便将家财官位都一并托付给了他，只望别断了家族的血脉。</p>
+<p>秀才算是拨云见日了。旁人都觉得，秀才前程似锦，可以平步青云。可秀才还是秀才，他始终没忘了他那自命高洁的志向，他也定觉得只有不畏权贵、一心为民，才对得起这锃亮的乌纱；他相信自己励精图治、公正明断，定能除了一方恶霸，保得四海百姓。</p>
+<p>可他想的什么，实在没人在乎，哪怕他一心为着的老百姓，也只是觉得理所当然，甚至嫌他冥古不化。</p>
+<p><strong><center>『九』</center></strong></p>
+<p>这是一个秀才的故事，却又不仅是一个秀才的故事。</p>
+<p>因着常年的入不敷出，不得敛财之道也不屑此道，秀才终于还是没法了却他心里那「方寸之地」的清高志愿。</p>
+<p><strong><center>『零』</center></strong></p>
+<p>这就是故事的一个端点。或许身在当中的人难以看透。</p>
+<p>你是否有想过，或许认为自己初逢时便猜透了命运，可这是非无常的红尘，不定要颠倒着品读，才能察到真实的一面。</p>
+<p>抑或在品味了颠倒荒谬的人生后，你认为终看透了宿命的真谛？却是否发现，命理尽是轮回，看到正或反，感到善与恶，只是因为你陷在了轮回中的某处，然后毫不自知地顺着它走了下去。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2012/01/29/artificial-article/" rel="prev" title="人造文章">
+                  <i class="fa fa-chevron-left"></i> 人造文章
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2012/02/13/bitter/" rel="next" title="苦味">
+                  苦味 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Narsi</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+  <script class="next-config" data-name="leancloud_visitors" type="application/json">{"enable":true,"app_id":"jgctFSUEP9b8AAd5FhFGoZYb-9Nh9j0Va","app_key":"nYs1KHoFWB1pcTM5xrx7Dw4S","server_url":null,"security":false}</script>
+  <script src="/js/third-party/statistics/lean-analytics.js"></script>
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"narsi","count":true,"lazyload":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>

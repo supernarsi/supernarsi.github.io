@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><!-- hexo injector head_begin start --><style type="text/css">.douban-card-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-height: 400px;
+}
+
+.douban-card {
+    display: flex;
+    margin: 30px 10px;
+    padding: 15px;
+    border-radius: 15px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+.douban-card:hover {
+    text-decoration: none;
+}
+
+.douban-card-bgimg {
+    position: absolute;
+    width: 115%;
+    height: 115%;
+    filter: blur(15px) brightness(0.6);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.douban-card-img {
+    position: relative;
+    height: 130px;
+    width: 80px;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.douban-card-left:hover .douban-card-img {
+    filter: blur(5px) brightness(0.6);
+    transform: perspective(800px) rotateX(180deg);
+}
+
+.douban-card-left .douban-card-img {
+    transition: all 500ms ease;
+}
+
+.douban-card-left {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.douban-card-left .douban-card-status {
+    height: 130px;
+    width: 80px;
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 30%;
+    transform: rotateX(180deg);
+    backface-visibility: hidden;
+    transition: all 500ms ease;
+}
+
+.douban-card-left:hover .douban-card-status {
+    transform: perspective(800px) rotateX(0deg);
+}
+
+.douban-card-right {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+    font-size: 16px;
+    font-family: "Courier New", Courier, monospace;
+    line-height: 1.3;
+    color: antiquewhite;
+}
+
+.douban-card-item {
+    margin-top: 4px;
+}
+</style><!-- hexo injector head_begin end -->
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.narsi.me","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.17.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="这几天在看《高性能 MySQL》这本书，目前看了一半左右，感觉很有收获，虽然有些内容还不太理解。这里按书的目录顺序记录下一些有用的知识点，加深记忆。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="高性能 MySQL 笔记">
+<meta property="og:url" content="https://blog.narsi.me/2013/09/05/high-performance-mysql/index.html">
+<meta property="og:site_name" content="Narsi">
+<meta property="og:description" content="这几天在看《高性能 MySQL》这本书，目前看了一半左右，感觉很有收获，虽然有些内容还不太理解。这里按书的目录顺序记录下一些有用的知识点，加深记忆。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2013-09-04T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-01-31T06:30:03.449Z">
+<meta property="article:author" content="Narsi">
+<meta property="article:tag" content="MySQL">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://blog.narsi.me/2013/09/05/high-performance-mysql/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.narsi.me/2013/09/05/high-performance-mysql/","path":"/2013/09/05/high-performance-mysql/","title":"高性能 MySQL 笔记"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>高性能 MySQL 笔记 | Narsi</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Narsi</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-books"><a href="/books" rel="section"><i class="fa fa-book fa-fw"></i>books</a></li><li class="menu-item menu-item-movies"><a href="/movies" rel="section"><i class="fa fa-film fa-fw"></i>movies</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6"><span class="nav-number">1.</span> <span class="nav-text">并发控制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E"><span class="nav-number">2.</span> <span class="nav-text">存储引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95"><span class="nav-number">3.</span> <span class="nav-text">基准测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%BC%98%E5%8C%96"><span class="nav-number">4.</span> <span class="nav-text">数据类型优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95"><span class="nav-number">5.</span> <span class="nav-text">索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AB%98%E6%80%A7%E8%83%BD%E7%B4%A2%E5%BC%95"><span class="nav-number">6.</span> <span class="nav-text">高性能索引</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Narsi</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://telegram.me/supernarsi" title="Telegram → https:&#x2F;&#x2F;telegram.me&#x2F;supernarsi" rel="noopener me" target="_blank"><i class="fab fa-telegram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/supernarsi" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;supernarsi" rel="noopener me" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/supernarsi" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;supernarsi" rel="noopener me" target="_blank"><i class="fab fa-weibo fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/supernarsi" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;supernarsi" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:narsihuang@gmail.com" title="E-Mail → mailto:narsihuang@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.narsi.me/2013/09/05/high-performance-mysql/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Narsi">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Narsi">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="高性能 MySQL 笔记 | Narsi">
+      <meta itemprop="description" content="这几天在看《高性能 MySQL》这本书，目前看了一半左右，感觉很有收获，虽然有些内容还不太理解。这里按书的目录顺序记录下一些有用的知识点，加深记忆。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          高性能 MySQL 笔记
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2013-09-05 00:00:00" itemprop="dateCreated datePublished" datetime="2013-09-05T00:00:00+08:00">2013-09-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2013/09/05/high-performance-mysql/" class="post-meta-item leancloud_visitors" data-flag-title="高性能 MySQL 笔记" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2013/09/05/high-performance-mysql/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="/2013/09/05/high-performance-mysql/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+            <div class="post-description">这几天在看《高性能 MySQL》这本书，目前看了一半左右，感觉很有收获，虽然有些内容还不太理解。这里按书的目录顺序记录下一些有用的知识点，加深记忆。</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>这几天在看《高性能 MySQL》这本书，目前看了一半左右，感觉很有收获，虽然有些内容还不太理解。这里按书的目录顺序记录下一些有用的知识点，加深记忆。</p>
+<h2 id="并发控制"><a href="#并发控制" class="headerlink" title="并发控制"></a>并发控制</h2><p><strong>读写锁</strong></p>
+<p>数据库为解决并发冲突问题而设计了「锁」，「锁」分为「读锁」和「写锁」两类。「读锁」是共享的，即互相不阻塞，因此多个用户可以在同一时刻读取同一种资源而不会导致冲突；「写锁」是排他的，即会阻塞其余的「写锁」和「读锁」，因此可以保证在同一时刻，只有唯一用户可以修改资源。</p>
+<p><strong>锁粒度</strong></p>
+<p>为提高并发性，数据库理想状态是根据实际需求进行「锁」的分配，例如如果只是修改一列数据，那最好只锁定那一列，而不是去锁定整张表，然而同时加锁又需要消耗资源，频繁的加锁、释放锁等操作会增大开销，因此需要一种锁策略来进行平衡。</p>
+<p>不同的存储引擎通过不同的锁粒度来实现不同的锁策略，MySQL 支持多种存储引擎，每种引擎都可以实现自己的锁粒度。最常用的两种引擎大概是 MyISAM 和 InnoDB，他们分别实现了表锁和行级锁。</p>
+<p>表锁顾名思义，会锁定整张表，当一个「写锁」被分配时，其余所有读写操作将被阻塞，这样的并发性很低，但优点是表锁的开销很小。</p>
+<p>与之相对的是行级锁，行级锁在「写锁」操作时，只会锁定操作的那一行或几行，大大提高了并发性，但同时开销相对而言很大。</p>
+<p><strong>事务</strong></p>
+<p>当业务逻辑涉及到数据库的「打包操作」或者需要回滚时，一般会使用到事务。事务具备原子性、一致性、隔离性、持久性的特征。原子性是指一个事务就是一个不可分割的最小工作单元，整个事务操作要么全部提交成功，要么全部失败回滚；一致性是指数据库总是从一个一致性的状态转换到另一个一致性的状态；隔离性是指事务提交成功，数据修改前，对其他事务是不透明的，即外部无法知晓事务内部的具体执行过程；持久性是指一旦事务提交，其所做修改会永久保存与数据库中，即使此时系统崩溃，数据也不会丢失。MySQL 的存储引擎中，InnoDB 实现了对事务的支持，MyISAM 则不支持事务。</p>
+<p><strong>死锁</strong></p>
+<p>死锁指多个事务在同一资源上相互占用，锁定对方占用的资源，而导致恶性循环的现象。解决方法包括死锁检测和死锁超时机制。InnoDB 遇到死锁会返回一个错误，处理方法是将持有最少行级锁的事务回滚。</p>
+<p><strong>MVCC</strong></p>
+<p>MVCC 可认为是行级锁的一个变种，但它在很多情况避免了加锁，因此减小了开销。InnoDB 的 MVCC 是通过两个隐藏的列来实现，一个保存行的创建时间，一个保存过期时间，都是用版本号来代替真实时间，每开始一个新事务，版本号递增。MVCC 只在 REPEATABLE READ 和 READ COMMITTED 这两种隔离级别下工作。</p>
+<p>SELECT 时，InnoDB 根据两个条件检查记录：1.版本早于当前事务的数据行，这样确保数据要么是在事务开始前已存在，要么是事务自身插入或修改过的；2.行的删除版本要么未定义，要么大于当前事务版本，这样确保数据在事务开始前未被删除。</p>
+<p>INSERT 时，InnoDB 为插入的每一行保存当前系统版本号作为行版本号。</p>
+<p>DELETE 时，InnoDB 为删除的每一行保存当前系统版本号作为行删除标识。</p>
+<p>UPDATE 时，InnoDB 为插入一行新纪录，保存当前系统版本号作为行版本号，同时保存当前系统版本号到原来的行作为行删除标识。</p>
+<h2 id="存储引擎"><a href="#存储引擎" class="headerlink" title="存储引擎"></a>存储引擎</h2><p><strong>查看表信息</strong></p>
+<p>使用 <code>SHOW TABLE STATUS</code> 命令，结果大概如下：</p>
+<pre><code>mysql&gt; SHOW TABLE STATUS LIKE &#39;test&#39;;
++------+--------+---------+------------+------+----------------+-------------+-----------------+--------------+-----------+----------------+---------------------+-------------+------------+-----------------+----------+----------------+---------+
+| Name | Engine | Version | Row_format | Rows | Avg_row_length | Data_length | Max_data_length | Index_length | Data_free | Auto_increment | Create_time         | Update_time | Check_time | Collation       | Checksum | Create_options | Comment |
++------+--------+---------+------------+------+----------------+-------------+-----------------+--------------+-----------+----------------+---------------------+-------------+------------+-----------------+----------+----------------+---------+
+| test | MyISAM |      10 | Compact    |    0 |              0 |       16384 |               0 |            0 |   6291456 |              1 | 2013-09-07 00:05:48 | NULL        | NULL       | utf8_general_ci |     NULL |                |         |
++------+--------+---------+------------+------+----------------+-------------+-----------------+--------------+-----------+----------------+---------------------+-------------+------------+-----------------+----------+----------------+---------+
+1 row in set (0.00 sec)
+</code></pre>
+<p><strong>InnoDB</strong></p>
+<p>InnoDB 目前是 MySQL 的默认引擎，主要有以下一些特点：</p>
+<ul>
+<li>   支持事务。</li>
+<li>   有自动崩溃恢复功能。</li>
+<li>   锁粒度为行级锁，同时也导致开销高。</li>
+<li>   采用 MVCC 来支持高并发，实现了四个标准隔离级别，默认级别是 REPEATABLE READ（可重复读）。</li>
+<li>   通过间隙锁策略防止幻读。</li>
+<li>   聚簇索引。</li>
+<li>   改变 InnoDb 表结构会重建整个表，包括重建所有索引。</li>
+</ul>
+<p><strong>MyISAM</strong></p>
+<p>MyISAM 是 MySQL 5.1 及之前版本的默认存储引擎，主要有以下一些特点：</p>
+<ul>
+<li>   不支持事务。</li>
+<li>   崩溃后无法恢复。</li>
+<li>   表锁，开销小，并发小。</li>
+<li>   支持全文索引。</li>
+<li>   每个表存储为数据文件（.MYD）和索引文件（.MYI）。</li>
+<li>   对创建后不会再进行数据修改的表，可使用 MySQL 压缩表。</li>
+</ul>
+<p><strong>选择合适的存储引擎</strong></p>
+<p>选择存储引擎需要考虑以下这些因素：</p>
+<ul>
+<li>   事务</li>
+<li>   备份</li>
+<li>   崩溃恢复</li>
+<li>   特性</li>
+</ul>
+<p><strong>转换引擎</strong></p>
+<p>多种方法可以转换表的存储引擎：</p>
+<ul>
+<li>   <strong>ALTER TABLE</strong></li>
+</ul>
+<p>最简单的方法是使用 <code>ALTER TABLE</code> 语句，如将 test 表修改为 MyISAM 可使用下面的语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">ALTER</span> <span class="keyword">TABLE</span> test_table ENGINE <span class="operator">=</span> InnoDB;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>   <strong>导入导出</strong></li>
+</ul>
+<p>可使用工具 dump 出数据表到文件，修改文件中 CREATE TABLE 语句中的存储引擎项，同时需要修改表名。</p>
+<ul>
+<li>   <strong>创建查询</strong></li>
+</ul>
+<p>原理是创建一个新表，再将原表数据导入到新表。数据量小时可以使用下面的语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">CREATE</span> <span class="keyword">TABLE</span> innodb_table <span class="keyword">LIKE</span> myisam_table;</span><br><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">ALTER</span> <span class="keyword">TABLE</span> innodb_table ENGINE <span class="operator">=</span> InnoDB;</span><br><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">INSERT</span> <span class="keyword">INTO</span> innodb_table <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> myisam_table;</span><br></pre></td></tr></table></figure>
+
+<p>但如果数据量大，这样执行可能会导致事务产生大量 undo，因此可以考虑使用事务分批处理（假设有主键 id，最小值为 x，最大值为 y）：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">START</span> TRANSACTION;</span><br><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">INSERT</span> <span class="keyword">INTO</span> innodb_table <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> myisam_table <span class="keyword">WHERE</span> id <span class="keyword">BETWEEN</span> x <span class="keyword">AND</span> y;</span><br><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">COMMIT</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="基准测试"><a href="#基准测试" class="headerlink" title="基准测试"></a>基准测试</h2><p><strong>策略</strong></p>
+<p>集成式：针对整个系统的整体测试。</p>
+<p>单组件式：单独测试 MySQL。</p>
+<p><strong>测试指标</strong></p>
+<ul>
+<li>   吞吐量</li>
+<li>   响应时间或延迟</li>
+<li>   并发性</li>
+<li>   可扩展性</li>
+</ul>
+<p><strong>工具</strong></p>
+<p>集成式工具：ab、http_load、JMeter。</p>
+<p>单组件式工具：mysqlslap、MySQL Benchmark Suite、Super Smack、Database Test Suit 等。</p>
+<h2 id="数据类型优化"><a href="#数据类型优化" class="headerlink" title="数据类型优化"></a>数据类型优化</h2><p>数据类型的选择应该遵守几个原则：</p>
+<ul>
+<li>   尽量使用正确存储的最小数据类型。因为它们占用更少的磁盘、内存和 CPU 缓存。</li>
+<li>   选择简单的数据类型。例如整型比字符串操作代价更低。注意应该使用 MySQL 内建的类型如 date、time 等来存储日期和时间，使用整型来存储 IP 地址。</li>
+<li>   避免使用 NULL。通常情况下应该指定列为 NOT NULL，否则可能导致索引更复杂。</li>
+</ul>
+<p><strong>整型</strong></p>
+<p>整数类型包括整数和实数存储。整数可以使用这几种类型：TINYINT、SMALLINT、MEDIUMINT、INT、BIGINT，他们分别使用 8、16、24、32、64 位存储空间，可存储值的范围从 -2<sup>N-1</sup> 到 2<sup>N-1</sup>-1，其中 N 表示存储空间的位数。如果使用 UNSIGNED 属性，可以使正数上限提高一倍。例如 TINYINT UNSIGNED 的存储范围是 0 到 255。整数类型的存储宽度，其实对于存储和计算并无意义，只是表示显示字符的长度，但计算还是以真是存储值为准。</p>
+<p>DECIMAL 用于存储精确的小数。MySQL 5.0 和更高版本将数字打包保存到一个二进制字符串中（每 4 个字节存 9 个数字）。例如 DECIMAL(18,9) 小数点两边将各存储 9 个数字，一共使用 9 个字节：小数点前的数字用 4 个字节，小数点后的数字用 4 个字节，小数点本身占 1 个字节。MySQL 5.0 及更高版本中 DECIAML 类型允许最多 65 个数字。</p>
+<p>浮点类型存储同样范围值时，比 DECIAML 使用更少的空间。FLOAT 使用 4 个字节存储，DOUBLE 使用 8 个字节。</p>
+<p>因为需要额外空间和计算开销，应在只对小数进行精确计算时才采用 DECIMAL 类型。</p>
+<p><strong>字符串类型</strong></p>
+<p>VARCHAR 用于存储可变长字符串，比定长类型节省空间。VARCHAR 需要使用额外 1 或 2 个字节记录字符串长度（小于或等于 225 字节使用 1 个字节表示，否则使用 2 个字节）。UPDATE 操作时，会有额外开销。适用场合包括：字符串列的最大长度比平均长度大很多；列更新少；使用类似 UTF-8 这样复杂的字符集，每个字符都用不同长度字节存储。</p>
+<p>CHAR 是定长的，MySQL 总是根据定义的字符串长度分配空间。MySQL 会删除 CHAR 类型数据所有的末尾空格。适用场合包括：很短的字符串；所有值都接近同一长度的字符串；经常 UPDATE 的数据。密码的 MD5 值适合使用 CHAR 存储。</p>
+<p><strong>日期和时间</strong></p>
+<p>日期有两种类型：DATETIME 和 TIMESTAMP。</p>
+<p>DATETIME 可表示的范围从 1001 年到 9999 年，精度为秒。与时区无关，使用 8 字节存储。</p>
+<p>TIMESTAMP 保存从 1970 年 1 月 1 日零点以来的秒数，即时间戳。依赖时区，使用 4 字节存储。MySQL 提供 FROM_UNIXTIME() 函数将 UNIX 时间戳转换为日期，提供 UNIX_TIMESTAMP() 函数把日期转换为 Unix 时间戳。TIMESTAMP 默认为 NOT NULL。</p>
+<p><strong>范式</strong></p>
+<p>范式更新操作更快；更少的数据重复和冗余；范式化的表通常更小，可更好放于内存，操作更快；更少使用 DISTINCT 或者 GROUP 语句。</p>
+<p>反范式化可以将所有数据存于一张表，避免关联；更有效的索引策略。</p>
+<p>实际项目中视情况混用二者。</p>
+<h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><p>索引是一种数据结构。索引优点在于大大减小服务器扫描的数据量，帮助服务器避免顺序和临时表，可以将随机 I&#x2F;O 变为顺序 I&#x2F;O。</p>
+<p><strong>B-Tree</strong></p>
+<p>B-Tree 适用于全键值、键值范围或键前缀查找。其中键前缀查找只适用于根据最左前缀的查找。</p>
+<p>限制：</p>
+<ul>
+<li>   如果不是按索引的最左列开始查找，则无法索引。</li>
+<li>   不能跳过索引中的列。</li>
+<li>   如果查询中有某个列的查找范围，则其右边所有列都无法使用索引优化查找。例如，查询 <code>WHERE last_name = &#39;Simth&#39; AND first_name LIKE &#39;J%&#39; AND dob = &#39;1976-12-23&#39;</code> ，则这个查询只能使用索引的前两列。</li>
+</ul>
+<p><strong>哈希索引</strong></p>
+<p>基于哈希表实现，只有精确匹配索引所有列的查询才有效。MySQL 中只有 Memory 引擎显示支持哈希索引。</p>
+<p>假设有如下表：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> testhash(</span><br><span class="line">	fname <span class="type">VARCHAR</span>(<span class="number">50</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">	lname CARCHAR(<span class="number">50</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">	KEY <span class="keyword">USING</span> HASH(fname)</span><br><span class="line">) ENGINE<span class="operator">=</span>MEMORY;</span><br></pre></td></tr></table></figure>
+
+<p>表中有如下数据：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> testhash;</span><br><span class="line"><span class="operator">+</span><span class="comment">-------+----------+</span></span><br><span class="line"><span class="operator">|</span> fname <span class="operator">|</span> lname    <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-------+----------+</span></span><br><span class="line"><span class="operator">|</span> Arjen <span class="operator">|</span> Lentz    <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> Baron <span class="operator">|</span> Schwartz <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> Ray   <span class="operator">|</span> Allen    <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> Peter <span class="operator">|</span> James    <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-------+----------+</span></span><br><span class="line"><span class="number">4</span> <span class="keyword">rows</span> <span class="keyword">in</span> <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure>
+
+<p>假设使用某哈希函数 f()，返回如下值（非真实数据）：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f(<span class="string">&#x27;Arjen&#x27;</span>) <span class="operator">=</span> <span class="number">2323</span></span><br><span class="line">f(<span class="string">&#x27;Baron&#x27;</span>) <span class="operator">=</span> <span class="number">7414</span></span><br><span class="line">f(<span class="string">&#x27;Ray&#x27;</span>) <span class="operator">=</span> <span class="number">8974</span></span><br><span class="line">f(<span class="string">&#x27;Peter&#x27;</span>) <span class="operator">=</span> <span class="number">2413</span></span><br></pre></td></tr></table></figure>
+
+<p>则哈希索引数据结构如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Slot	<span class="keyword">Value</span></span><br><span class="line"><span class="number">232</span>		指向第 <span class="number">1</span> 行的指针</span><br><span class="line"><span class="number">2413</span>	指向第 <span class="number">4</span> 行的指针</span><br><span class="line"><span class="number">7414</span>	指向第 <span class="number">2</span> 行的指针</span><br><span class="line"><span class="number">8974</span>	指向第 <span class="number">3</span> 行的指针</span><br></pre></td></tr></table></figure>
+
+<p>执行如下查询：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">SELECT</span> lname <span class="keyword">FROM</span> testhash <span class="keyword">WHERE</span> fname <span class="operator">=</span> <span class="string">&#x27;Peter&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>MySQL先计算 Peter 的哈希值，并使用该值寻找对应记录指针。找到 f(‘Peter’) &#x3D; 2413 后在索引中查找 2413，最后找到对应第 4 行的指针。</p>
+<p>限制：</p>
+<ul>
+<li>   索引只包含哈希值和行指针，不存储字段值，所以无法使用索引值来避免读行。</li>
+<li>   无法排序。</li>
+<li>   不支持部分索引匹配查找。</li>
+<li>   只支持等值比较查询。不支持任何范围查询。</li>
+<li>   出现哈希冲突时，遍历链表中所有行指针。维护操作代价高。</li>
+</ul>
+<p>InnoDB 有「自适应哈希索引」的功能。</p>
+<p><strong>全文索引</strong></p>
+<p>全文索引查找文本中的关键词而不是直接比较索引中的值。适用于 MATCH AGAINST 操作而不是普通的 WHERE 条件查询。</p>
+<h2 id="高性能索引"><a href="#高性能索引" class="headerlink" title="高性能索引"></a>高性能索引</h2><p><strong>独立列</strong></p>
+<p>索引列不可以是表达式的一部分，也不能是函数参数。例如下面的这些查询都将无法正常使用索引：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">SELECT</span> actor_id <span class="keyword">FROM</span> test_table <span class="keyword">WHERE</span> actor_id <span class="operator">+</span> <span class="number">1</span> <span class="operator">=</span> <span class="number">5</span>;</span><br><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">SELECT</span> ... <span class="keyword">WHERE</span> TO_DAYS(<span class="built_in">CURRENT_DATE</span>) <span class="operator">-</span> TO_DAYS(date_col) <span class="operator">&lt;=</span> <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>前缀索引</strong></p>
+<p>只索引部分字符可以节省索引空间，以提高效率。对于 BLOB 或 TEXT 或者很长的 VARCHAR 类型的列只有使用前缀索引。</p>
+<p>需要在足够长（保证足够高的选择性）和不能过长（保证索引效率）之间寻求平衡。</p>
+<p>例如有如下表数据：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">AS</span> cnt, city_table <span class="keyword">FROM</span> city <span class="keyword">GROUP</span> <span class="keyword">BY</span> city</span><br><span class="line"><span class="operator">-</span><span class="operator">&gt;</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> cnt <span class="keyword">DESC</span> LIMIT <span class="number">10</span>; </span><br><span class="line"><span class="operator">+</span><span class="comment">--------+-------------+</span></span><br><span class="line"><span class="operator">|</span>  cnt   <span class="operator">|</span>   city      <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">--------+-------------+</span></span><br><span class="line"><span class="operator">|</span>   <span class="number">65</span>   <span class="operator">|</span>   London    <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>   <span class="number">49</span>   <span class="operator">|</span>   Hiroshima <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>   <span class="number">48</span>   <span class="operator">|</span>   Teboksary <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>   <span class="number">48</span>   <span class="operator">|</span>   Pak Kret  <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>   <span class="number">48</span>   <span class="operator">|</span>   Yaound    <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>   <span class="number">47</span>   <span class="operator">|</span>   Tel Aviv  <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>   <span class="number">47</span>   <span class="operator">|</span>   Shimoga   <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>   <span class="number">45</span>   <span class="operator">|</span>   Cabuyao   <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>   <span class="number">45</span>   <span class="operator">|</span>   Callao    <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>   <span class="number">45</span>   <span class="operator">|</span>   Bislig    <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">--------+-------------+</span></span><br></pre></td></tr></table></figure>
+
+<p>通过 3 个前缀字母索引查找：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) cnt, <span class="keyword">LEFT</span>(city, <span class="number">3</span>) <span class="keyword">AS</span> pref <span class="keyword">FROM</span> city_table</span><br><span class="line"><span class="operator">-</span><span class="operator">&gt;</span> <span class="keyword">GROUP</span> <span class="keyword">BY</span> pref <span class="keyword">ORDER</span> <span class="keyword">BY</span> cnt <span class="keyword">DESC</span> LIMIT <span class="number">10</span>;</span><br><span class="line"><span class="operator">+</span><span class="comment">--------+-------+</span></span><br><span class="line"><span class="operator">|</span>  cnt   <span class="operator">|</span>  pref <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">--------+-------+</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">483</span>   <span class="operator">|</span>  San  <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">195</span>   <span class="operator">|</span>  Cha  <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">177</span>   <span class="operator">|</span>  Tan  <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">167</span>   <span class="operator">|</span>  Sou  <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">163</span>   <span class="operator">|</span>  al<span class="operator">-</span>  <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">163</span>   <span class="operator">|</span>  Sal  <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">146</span>   <span class="operator">|</span>  Shi  <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">136</span>   <span class="operator">|</span>  Hal  <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">130</span>   <span class="operator">|</span>  Val  <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">129</span>   <span class="operator">|</span>  Bat  <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">--------+-------+</span></span><br></pre></td></tr></table></figure>
+
+<p>因为每个前缀都比原城市多，因此唯一前缀比唯一城市少很多。增加前缀长度至 7 后查找结果如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) cnt, <span class="keyword">LEFT</span>(city, <span class="number">7</span>) <span class="keyword">AS</span> pref <span class="keyword">FROM</span> city_table</span><br><span class="line"><span class="operator">-</span><span class="operator">&gt;</span> <span class="keyword">GROUP</span> <span class="keyword">BY</span> pref <span class="keyword">ORDER</span> <span class="keyword">BY</span> cnt <span class="keyword">DESC</span> LIMIT <span class="number">10</span>;</span><br><span class="line"><span class="operator">+</span><span class="comment">--------+-------------+</span></span><br><span class="line"><span class="operator">|</span>  cnt   <span class="operator">|</span>   pref      <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">--------+-------------+</span></span><br><span class="line"><span class="operator">|</span>   <span class="number">70</span>   <span class="operator">|</span>   Santiag   <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>   <span class="number">68</span>   <span class="operator">|</span>   San Fel   <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>   <span class="number">65</span>   <span class="operator">|</span>   London    <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>   <span class="number">61</span>   <span class="operator">|</span>   Valle d   <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>   <span class="number">49</span>   <span class="operator">|</span>   Hiroshi   <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>   <span class="number">48</span>   <span class="operator">|</span>   Teboksa   <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>   <span class="number">48</span>   <span class="operator">|</span>   Pak Kre   <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>   <span class="number">48</span>   <span class="operator">|</span>   Yaound    <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>   <span class="number">47</span>   <span class="operator">|</span>   Tel Avi   <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>   <span class="number">47</span>   <span class="operator">|</span>   Shimoga   <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">--------+-------------+</span></span><br></pre></td></tr></table></figure>
+
+<p>计算完整列的选择性方式如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> city)<span class="operator">/</span><span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> city_table;</span><br><span class="line"><span class="operator">+</span><span class="comment">---------------------------------+</span></span><br><span class="line"><span class="operator">|</span>  <span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> city)<span class="operator">/</span><span class="built_in">COUNT</span>(<span class="operator">*</span>)  <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">---------------------------------+</span></span><br><span class="line"><span class="operator">|</span>                         <span class="number">0.0312</span>  <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">---------------------------------+</span></span><br></pre></td></tr></table></figure>
+
+<p>在同一个查询中计算不同前缀长度的选择性：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> <span class="keyword">LEFT</span>(city, <span class="number">3</span>))<span class="operator">/</span><span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">AS</span> sel3,</span><br><span class="line"><span class="operator">-</span><span class="operator">&gt;</span>	<span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> <span class="keyword">LEFT</span>(city, <span class="number">4</span>))<span class="operator">/</span><span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">AS</span> sel4,</span><br><span class="line"><span class="operator">-</span><span class="operator">&gt;</span>	<span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> <span class="keyword">LEFT</span>(city, <span class="number">5</span>))<span class="operator">/</span><span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">AS</span> sel5,</span><br><span class="line"><span class="operator">-</span><span class="operator">&gt;</span>	<span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> <span class="keyword">LEFT</span>(city, <span class="number">6</span>))<span class="operator">/</span><span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">AS</span> sel6,</span><br><span class="line"><span class="operator">-</span><span class="operator">&gt;</span>	<span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> <span class="keyword">LEFT</span>(city, <span class="number">7</span>))<span class="operator">/</span><span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">AS</span> sel7</span><br><span class="line"><span class="operator">-</span><span class="operator">&gt;</span> <span class="keyword">FROM</span> city_table;</span><br><span class="line"><span class="operator">+</span><span class="comment">--------+--------+--------+--------+--------+</span></span><br><span class="line"><span class="operator">|</span>  sel3  <span class="operator">|</span>  sel4  <span class="operator">|</span>  sel5  <span class="operator">|</span>  sel6  <span class="operator">|</span>  sel7  <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">--------+--------+--------+--------+--------+</span></span><br><span class="line"><span class="operator">|</span> <span class="number">0.0239</span> <span class="operator">|</span> <span class="number">0.0293</span> <span class="operator">|</span> <span class="number">0.0305</span> <span class="operator">|</span> <span class="number">0.0309</span> <span class="operator">|</span> <span class="number">0.0310</span> <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">--------+--------+--------+--------+--------+</span></span><br></pre></td></tr></table></figure>
+
+<p>创建前缀索引：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">ALTER</span> <span class="keyword">TABLE</span> city_table <span class="keyword">ADD</span> KEY(city(<span class="number">7</span>));</span><br></pre></td></tr></table></figure>
+
+<p>前缀索引缺点在于无法做 ORDER BY 和 GROUP BY，也无法使用前缀索引做覆盖扫描。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/MySQL/" rel="tag"><i class="fa fa-tag"></i> MySQL</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2013/09/02/PHP-features/" rel="prev" title="PHP 特性小结（转）">
+                  <i class="fa fa-chevron-left"></i> PHP 特性小结（转）
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2013/09/12/cross-bridge/" rel="next" title="过桥问题">
+                  过桥问题 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Narsi</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+  <script class="next-config" data-name="leancloud_visitors" type="application/json">{"enable":true,"app_id":"jgctFSUEP9b8AAd5FhFGoZYb-9Nh9j0Va","app_key":"nYs1KHoFWB1pcTM5xrx7Dw4S","server_url":null,"security":false}</script>
+  <script src="/js/third-party/statistics/lean-analytics.js"></script>
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"narsi","count":true,"lazyload":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>

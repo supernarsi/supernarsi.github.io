@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><!-- hexo injector head_begin start --><style type="text/css">.douban-card-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-height: 400px;
+}
+
+.douban-card {
+    display: flex;
+    margin: 30px 10px;
+    padding: 15px;
+    border-radius: 15px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+.douban-card:hover {
+    text-decoration: none;
+}
+
+.douban-card-bgimg {
+    position: absolute;
+    width: 115%;
+    height: 115%;
+    filter: blur(15px) brightness(0.6);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.douban-card-img {
+    position: relative;
+    height: 130px;
+    width: 80px;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.douban-card-left:hover .douban-card-img {
+    filter: blur(5px) brightness(0.6);
+    transform: perspective(800px) rotateX(180deg);
+}
+
+.douban-card-left .douban-card-img {
+    transition: all 500ms ease;
+}
+
+.douban-card-left {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.douban-card-left .douban-card-status {
+    height: 130px;
+    width: 80px;
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 30%;
+    transform: rotateX(180deg);
+    backface-visibility: hidden;
+    transition: all 500ms ease;
+}
+
+.douban-card-left:hover .douban-card-status {
+    transform: perspective(800px) rotateX(0deg);
+}
+
+.douban-card-right {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+    font-size: 16px;
+    font-family: "Courier New", Courier, monospace;
+    line-height: 1.3;
+    color: antiquewhite;
+}
+
+.douban-card-item {
+    margin-top: 4px;
+}
+</style><!-- hexo injector head_begin end -->
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.narsi.me","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.17.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="一阵硬物撞击金属的声音将我吵醒，一时间没反应过来自己身在何处，慌忙摸到肘边的眼镜戴上后，才清醒过来——原来是趴在图书馆的桌上睡着了。看了看时间，才下午两点刚过，想来睡着也不过二十分钟，却感觉沉得仿佛经历了一场冬眠。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="身影">
+<meta property="og:url" content="https://blog.narsi.me/2013/09/29/the-figure/index.html">
+<meta property="og:site_name" content="Narsi">
+<meta property="og:description" content="一阵硬物撞击金属的声音将我吵醒，一时间没反应过来自己身在何处，慌忙摸到肘边的眼镜戴上后，才清醒过来——原来是趴在图书馆的桌上睡着了。看了看时间，才下午两点刚过，想来睡着也不过二十分钟，却感觉沉得仿佛经历了一场冬眠。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2013-09-28T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-01-31T06:30:03.449Z">
+<meta property="article:author" content="Narsi">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://blog.narsi.me/2013/09/29/the-figure/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.narsi.me/2013/09/29/the-figure/","path":"/2013/09/29/the-figure/","title":"身影"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>身影 | Narsi</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Narsi</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-books"><a href="/books" rel="section"><i class="fa fa-book fa-fw"></i>books</a></li><li class="menu-item menu-item-movies"><a href="/movies" rel="section"><i class="fa fa-film fa-fw"></i>movies</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Narsi</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://telegram.me/supernarsi" title="Telegram → https:&#x2F;&#x2F;telegram.me&#x2F;supernarsi" rel="noopener me" target="_blank"><i class="fab fa-telegram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/supernarsi" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;supernarsi" rel="noopener me" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/supernarsi" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;supernarsi" rel="noopener me" target="_blank"><i class="fab fa-weibo fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/supernarsi" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;supernarsi" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:narsihuang@gmail.com" title="E-Mail → mailto:narsihuang@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.narsi.me/2013/09/29/the-figure/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Narsi">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Narsi">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="身影 | Narsi">
+      <meta itemprop="description" content="一阵硬物撞击金属的声音将我吵醒，一时间没反应过来自己身在何处，慌忙摸到肘边的眼镜戴上后，才清醒过来——原来是趴在图书馆的桌上睡着了。看了看时间，才下午两点刚过，想来睡着也不过二十分钟，却感觉沉得仿佛经历了一场冬眠。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          身影
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2013-09-29 00:00:00" itemprop="dateCreated datePublished" datetime="2013-09-29T00:00:00+08:00">2013-09-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9D%82%E6%96%87/" itemprop="url" rel="index"><span itemprop="name">杂文</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2013/09/29/the-figure/" class="post-meta-item leancloud_visitors" data-flag-title="身影" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2013/09/29/the-figure/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="/2013/09/29/the-figure/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+            <div class="post-description">一阵硬物撞击金属的声音将我吵醒，一时间没反应过来自己身在何处，慌忙摸到肘边的眼镜戴上后，才清醒过来——原来是趴在图书馆的桌上睡着了。看了看时间，才下午两点刚过，想来睡着也不过二十分钟，却感觉沉得仿佛经历了一场冬眠。</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>一阵硬物撞击金属的声音将我吵醒，一时间没反应过来自己身在何处，慌忙摸到肘边的眼镜戴上后，才清醒过来——原来是趴在图书馆的桌上睡着了。看了看时间，才下午两点刚过，想来睡着也不过二十分钟，却感觉沉得仿佛经历了一场冬眠。</p>
+<p>刚才那阵将我吵醒的讨厌撞击声又一次传来，这不禁让我恼火。这座图书馆本已十分清净，我又特地选择了一个隐秘的无人角落，我很庆幸这块「宝地」还无人占据，只一张方桌，四把座椅规矩而孤独地立在那里，「宝地」四周一面背墙，一面靠窗，一面朝向过道，却又被兀然突出的一块墙体挡住视线，剩下一面是站列整齐的高大书架——若不是到这一侧来找书，大约很难发现这处「世外桃源」。然而，越是这般隔绝的清净之地，一旦略有响动，便格外醒耳，如同噪音被放大了十倍。我环顾四周这才在大约十点钟方向发现了声源——一个图书管理员正在整理图书。</p>
+<p>我愤愤地盯住他，偏横贯在那里的书架阻隔了视线的去路，也阻隔了我的愤懑情绪。我却不甘心，依旧盯住他，就像打算伺机拍死恼人的苍蝇一样目不转睛。</p>
+<p>透过书架每层间的空隙，我大概辨别出了一些他的特征，不高偏瘦—书架总有七层，他的头在第五六层间恰好被排放的书籍遮挡住看不见面貌。着一身黑色短袖体恤和黑色休闲长裤，似是工作装，脚下却又被书架底层挡住看不见了。醒目的是戴了一双白手套，不论是工作要求也好个人习惯也罢，对于爱书之人总难免会多出几分好感的，这让我一下忘了刚才的恼火。</p>
+<p>这时他侧身弯下腰去查看底层书架，便有一瞬脸庞闪过书架间的空隙，我这才发现原来是个女孩。但也就一瞬，随即又被下一层的书给挡住了。</p>
+<p>这倒提起我的好奇心来，就像遇上一个谜题，抓到一丝线索，便总想找到一个答案。我开始端详起她的行动来。她的动作很娴熟，从车架上拾起两本书，略一停顿——大概是扫视书脊上的索书号，转身定位到最上层书架，轻踮脚尖，将书推入书队中。一套动作完成大约四五秒钟，想必是对许多书的位置都大致了然了。</p>
+<p>放置了两三本书后她便推着车书架朝着这边移来，我开始越发期待，猜想着她究竟会是哪般模样。然而，我却在她将身影闪出书架的那一刹慌了神，甚至来不及低头佯装看书，只好将目光急忙转到另一侧的书架上来回游移，却又一边用余光扫视她，直到她完全闪出身位，并侧身向车书架里找书时，我才又将目光落回她的身上。其实也仍旧只有一瞥，像犯错的儿童不敢直视家长那般心虚惶恐。但这次总算瞧见了面貌—她似乎是二十出头的年纪，脑后绑了个不长的高马尾，显出几分俏皮，额前梳着一匹蓬松的刘海，遮了半边眼睑。侧面看去高挺的鼻梁显出几分英气，细长的唇角自然地微垂着，仿佛在思索什么。身高算是中等，身材却很匀称，不知道是不是体恤尺码的缘故，胸部显得充实饱满。她的胸前还挂了一串类似工牌的证件，相较起来更引人注目的是脖子上戴着的一枚玉佩，可是看不清究竟是观音还是佛祖，也不太好意思盯着细看，总觉羞赧。有那么一瞬间她让我想起了王小波《黄金时代》里的陈清扬。</p>
+<p>她似乎又要往这边侧身，我便又慌忙将目光滑向一旁的书架假装搜寻起书籍来，这一片陈列的都是日本文学，恰好瞥见一本《人生在世便是相逢》，不禁暗自觉得好笑。待我回过神来，却发现她已推车绕过更远一排的书架去了，我这才晃见她脚下蹬着一双橙色的轻便平底鞋，这给她的身影更凭添了几分光彩。</p>
+<p>也不知道是否因为发现了这边还有人看书，她的动作似乎更轻了些。</p>
+<p>直到她的身影又没入一排排书架，消失不见，我再也没听见一丝杂音，周遭又恢复了死寂，似醒来前一般。心里面却好像少了一点生机，多了几许失落。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2013/09/12/cross-bridge/" rel="prev" title="过桥问题">
+                  <i class="fa fa-chevron-left"></i> 过桥问题
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2013/12/01/the-story-of-cookery/" rel="next" title="搜食记">
+                  搜食记 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Narsi</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+  <script class="next-config" data-name="leancloud_visitors" type="application/json">{"enable":true,"app_id":"jgctFSUEP9b8AAd5FhFGoZYb-9Nh9j0Va","app_key":"nYs1KHoFWB1pcTM5xrx7Dw4S","server_url":null,"security":false}</script>
+  <script src="/js/third-party/statistics/lean-analytics.js"></script>
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"narsi","count":true,"lazyload":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>

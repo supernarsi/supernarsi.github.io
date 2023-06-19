@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><!-- hexo injector head_begin start --><style type="text/css">.douban-card-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-height: 400px;
+}
+
+.douban-card {
+    display: flex;
+    margin: 30px 10px;
+    padding: 15px;
+    border-radius: 15px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+.douban-card:hover {
+    text-decoration: none;
+}
+
+.douban-card-bgimg {
+    position: absolute;
+    width: 115%;
+    height: 115%;
+    filter: blur(15px) brightness(0.6);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.douban-card-img {
+    position: relative;
+    height: 130px;
+    width: 80px;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.douban-card-left:hover .douban-card-img {
+    filter: blur(5px) brightness(0.6);
+    transform: perspective(800px) rotateX(180deg);
+}
+
+.douban-card-left .douban-card-img {
+    transition: all 500ms ease;
+}
+
+.douban-card-left {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.douban-card-left .douban-card-status {
+    height: 130px;
+    width: 80px;
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 30%;
+    transform: rotateX(180deg);
+    backface-visibility: hidden;
+    transition: all 500ms ease;
+}
+
+.douban-card-left:hover .douban-card-status {
+    transform: perspective(800px) rotateX(0deg);
+}
+
+.douban-card-right {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+    font-size: 16px;
+    font-family: "Courier New", Courier, monospace;
+    line-height: 1.3;
+    color: antiquewhite;
+}
+
+.douban-card-item {
+    margin-top: 4px;
+}
+</style><!-- hexo injector head_begin end -->
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.narsi.me","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.17.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="故事是听 C 君讲的，当然他也说是从别处听来，至于故事的源头怕已无从考究，也许起初只是一个玩笑。流言蜚语大抵如此，抓住一个线头，便越扯越远，几番润色后，玩笑也成了栩栩如生的故事。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="李美丽">
+<meta property="og:url" content="https://blog.narsi.me/2013/04/19/li/index.html">
+<meta property="og:site_name" content="Narsi">
+<meta property="og:description" content="故事是听 C 君讲的，当然他也说是从别处听来，至于故事的源头怕已无从考究，也许起初只是一个玩笑。流言蜚语大抵如此，抓住一个线头，便越扯越远，几番润色后，玩笑也成了栩栩如生的故事。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2013-04-18T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-01-31T06:30:03.448Z">
+<meta property="article:author" content="Narsi">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://blog.narsi.me/2013/04/19/li/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.narsi.me/2013/04/19/li/","path":"/2013/04/19/li/","title":"李美丽"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>李美丽 | Narsi</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Narsi</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-books"><a href="/books" rel="section"><i class="fa fa-book fa-fw"></i>books</a></li><li class="menu-item menu-item-movies"><a href="/movies" rel="section"><i class="fa fa-film fa-fw"></i>movies</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Narsi</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://telegram.me/supernarsi" title="Telegram → https:&#x2F;&#x2F;telegram.me&#x2F;supernarsi" rel="noopener me" target="_blank"><i class="fab fa-telegram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/supernarsi" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;supernarsi" rel="noopener me" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/supernarsi" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;supernarsi" rel="noopener me" target="_blank"><i class="fab fa-weibo fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/supernarsi" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;supernarsi" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:narsihuang@gmail.com" title="E-Mail → mailto:narsihuang@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.narsi.me/2013/04/19/li/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Narsi">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Narsi">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="李美丽 | Narsi">
+      <meta itemprop="description" content="故事是听 C 君讲的，当然他也说是从别处听来，至于故事的源头怕已无从考究，也许起初只是一个玩笑。流言蜚语大抵如此，抓住一个线头，便越扯越远，几番润色后，玩笑也成了栩栩如生的故事。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          李美丽
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2013-04-19 00:00:00" itemprop="dateCreated datePublished" datetime="2013-04-19T00:00:00+08:00">2013-04-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9D%82%E6%96%87/" itemprop="url" rel="index"><span itemprop="name">杂文</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2013/04/19/li/" class="post-meta-item leancloud_visitors" data-flag-title="李美丽" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2013/04/19/li/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="/2013/04/19/li/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+            <div class="post-description">故事是听 C 君讲的，当然他也说是从别处听来，至于故事的源头怕已无从考究，也许起初只是一个玩笑。流言蜚语大抵如此，抓住一个线头，便越扯越远，几番润色后，玩笑也成了栩栩如生的故事。</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>故事是听 C 君讲的，当然他也说是从别处听来，至于故事的源头怕已无从考究，也许起初只是一个玩笑。流言蜚语大抵如此，抓住一个线头，便越扯越远，几番润色后，玩笑也成了栩栩如生的故事。</p>
+<p>故事讲的是一对姐妹，姐姐李美丽大妹妹李聪明三岁。说是姐姐出生时，她爸老李还没想好孩子的名字，直到见着巴掌大的小宝贝美丽可爱——其实初生儿都皱巴巴一团哪里谈得上美丽，可老李满心欢喜就觉得这小东西漂亮，于是一拍脑门，「就叫李美丽了！」后来李美丽老爱跟别人讲这段轶事，她说很有趣——这都是后话。大约两岁时，老李察觉到李美丽有些异样，不是面子上的——那时李美丽可真算是标致美丽，怎么看都是美人胚子；异样在里子上——有些傻气！不会走路不提，连话也不说，起先以为是哑，可偶尔饿极了又会轻声叫唤，平时老呆呆傻傻不说不动，除了一直眨巴那双透亮的大眼睛。医生也看过，说脑子没问题，老李只得叹息得了个笨女儿。李美丽三岁那年，妹妹李聪明出生了，不同于美丽，李聪明这名字打老李媳妇怀孕起老李就给想好了，不论男女，一定要聪明！李聪明倒也不负重望，比姐姐开窍早，打小鬼机灵！但比起姐姐，李聪明却显得没那么漂亮，尤其是眼睛，没神儿。因此老李偶尔还会叹息，姐妹俩怎么偏偏就好处分了两头，都不得圆满。</p>
+<p>李美丽到了六岁左右。是该上小学的年纪，不像其他小孩哭着喊着死活不去学校，也没谁凶她诱她，送去学校就乖乖呆那儿。开学一周后，老李向学校老师了解情况，老师说李美丽是小朋友中最聪明的一个，听话、学东西快，特别招人喜爱。老李总算安心，丫头可算开窍了！可反倒是李聪明，越发不听指挥，抓着什么都爱往嘴里放，不好吃或嚼不动就使劲哭，搞得老李不得不把家里东西都垒高了放。</p>
+<p>李聪明长到五岁时，跟姐姐截然相反，好容易哄去了学前班，却是一天在教室哭哭闹闹不得安宁，老李好气又好笑，给李聪明起了个小名叫李折腾。</p>
+<p>日子原本也风平浪静地过着，三年又五年，五年再十年，要说有些意外的，大概就是李美丽并没有长成大美人，却越长越像老李——国字脸、大额头，只有那双眼睛还如小时一般明亮动人；反倒是妹妹李聪明，越发标致起来，个头业已经超过姐姐，邻里都说跟老李媳妇年轻时一个模样，高挑貌美！但就在李美丽读高三那年，家中出了变故，老李查出了肺癌，工作是没法继续了，不但如此，看病治疗还花去了家里几乎全部积蓄，眼看美满幸福的小康一家一下就掉到了温饱难续的境地。</p>
+<p>直到李美丽高考结束，老李病情也既没好转也没恶化，好消息是李美丽的高考成绩是当年的全市理科第五名，要说上个名牌大学是妥妥当当的。可李美丽有自己的心思，她随意填写了一个市内普通大学的志愿，跟老李说的是好在家照顾老两口和妹妹，其实她压根就没打算去上大学，妹妹还得念书，家里又没了经济来源，她觉得自己得肩负起一些责任来。直到开学半学期后，老李才知道实情，那时李美丽已经在外打零工有些时日了，洗盘子、当家教一时间兼着好几份工，不仅没再向家里讨一分钱还时不时给家里补给些，就说是申请的学校补助。知道真相的老李给气个半死，当时就被送去急诊，好在抢救了回来，吓得李美丽守在医院哭了大半天。待大家都平静下来后，李美丽才把自己想法第一次跟爸妈老老实实袒露了：妹妹才刚上完初中，书是一定得继续读的，老爸要看病，老妈照顾着老爸已经够劳累了，再说老妈身体本来也不好以前就没出去工作只是在家打理家务，如今这情况只有她来担负起养家的责任。老李何尝不知道李美丽讲得没错，可这实在太委屈女儿了，直恨自己没用，老李媳妇则一直在一旁抽泣恨老天的不公平。木已成舟终于老李两口子还是拿李美丽没法，但李聪明却一直被蒙鼓里。</p>
+<p>说到李聪明，长大后的李聪明除了性格上一直大大咧咧惹人喜爱，实在再找不见幼时聪明伶俐的影子，不止读书比不上姐姐，各科成绩老是在及格线周边徘徊，连其他各种娱乐活动体育活动也不太灵光，不是李聪明懒或者不努力，实在是在学习和适应力方面没什么天赋，老李病前还开玩笑说这姐妹俩长大就互换身体了，李美丽身体里住了李聪明的魂儿，李聪明身体里又跑来了李美丽。</p>
+<p>（待续）</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2012/11/28/far-away/" rel="prev" title="遥寄">
+                  <i class="fa fa-chevron-left"></i> 遥寄
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2013/04/26/Miss-Chen/" rel="next" title="陈小姐">
+                  陈小姐 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Narsi</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+  <script class="next-config" data-name="leancloud_visitors" type="application/json">{"enable":true,"app_id":"jgctFSUEP9b8AAd5FhFGoZYb-9Nh9j0Va","app_key":"nYs1KHoFWB1pcTM5xrx7Dw4S","server_url":null,"security":false}</script>
+  <script src="/js/third-party/statistics/lean-analytics.js"></script>
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"narsi","count":true,"lazyload":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>
