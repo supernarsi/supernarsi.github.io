@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><!-- hexo injector head_begin start --><style type="text/css">.douban-card-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-height: 400px;
+}
+
+.douban-card {
+    display: flex;
+    margin: 30px 10px;
+    padding: 15px;
+    border-radius: 15px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+.douban-card:hover {
+    text-decoration: none;
+}
+
+.douban-card-bgimg {
+    position: absolute;
+    width: 115%;
+    height: 115%;
+    filter: blur(15px) brightness(0.6);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.douban-card-img {
+    position: relative;
+    height: 130px;
+    width: 80px;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.douban-card-left:hover .douban-card-img {
+    filter: blur(5px) brightness(0.6);
+    transform: perspective(800px) rotateX(180deg);
+}
+
+.douban-card-left .douban-card-img {
+    transition: all 500ms ease;
+}
+
+.douban-card-left {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.douban-card-left .douban-card-status {
+    height: 130px;
+    width: 80px;
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 30%;
+    transform: rotateX(180deg);
+    backface-visibility: hidden;
+    transition: all 500ms ease;
+}
+
+.douban-card-left:hover .douban-card-status {
+    transform: perspective(800px) rotateX(0deg);
+}
+
+.douban-card-right {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+    font-size: 16px;
+    font-family: "Courier New", Courier, monospace;
+    line-height: 1.3;
+    color: antiquewhite;
+}
+
+.douban-card-item {
+    margin-top: 4px;
+}
+</style><!-- hexo injector head_begin end -->
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"supernarsi.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="吕思勉先生可算是历史类书籍的「票房保证」了。依托深厚的历史功底和一流的论述能力，即使一些枯燥乏味的历史吕老也能「妙笔生花」，何况三国这一世人耳熟能详，也是最受各类文化、影视、娱乐作品最喜爱的热门题材。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《三国史话》读书笔记">
+<meta property="og:url" content="https://supernarsi.github.io/2016/11/12/repo-sanguoshihua/index.html">
+<meta property="og:site_name" content="Narsi">
+<meta property="og:description" content="吕思勉先生可算是历史类书籍的「票房保证」了。依托深厚的历史功底和一流的论述能力，即使一些枯燥乏味的历史吕老也能「妙笔生花」，何况三国这一世人耳熟能详，也是最受各类文化、影视、娱乐作品最喜爱的热门题材。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-11-11T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-02-25T12:42:12.614Z">
+<meta property="article:author" content="Narsi">
+<meta property="article:tag" content="书评">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://supernarsi.github.io/2016/11/12/repo-sanguoshihua/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://supernarsi.github.io/2016/11/12/repo-sanguoshihua/","path":"/2016/11/12/repo-sanguoshihua/","title":"《三国史话》读书笔记"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>《三国史话》读书笔记 | Narsi</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Narsi</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-books"><a href="/books" rel="section"><i class="fa fa-book fa-fw"></i>书籍</a></li><li class="menu-item menu-item-movies"><a href="/movies" rel="section"><i class="fa fa-film fa-fw"></i>电影</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80"><span class="nav-number">1.</span> <span class="nav-text">一</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C"><span class="nav-number">2.</span> <span class="nav-text">二</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89"><span class="nav-number">3.</span> <span class="nav-text">三</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B"><span class="nav-number">4.</span> <span class="nav-text">四</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%94"><span class="nav-number">5.</span> <span class="nav-text">五</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AD"><span class="nav-number">6.</span> <span class="nav-text">六</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%83"><span class="nav-number">7.</span> <span class="nav-text">七</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AB"><span class="nav-number">8.</span> <span class="nav-text">八</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B9%9D"><span class="nav-number">9.</span> <span class="nav-text">九</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%81"><span class="nav-number">10.</span> <span class="nav-text">十</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%81%E4%B8%80"><span class="nav-number">11.</span> <span class="nav-text">十一</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%81%E4%BA%8C"><span class="nav-number">12.</span> <span class="nav-text">十二</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%81%E4%B8%89"><span class="nav-number">13.</span> <span class="nav-text">十三</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%81%E5%9B%9B"><span class="nav-number">14.</span> <span class="nav-text">十四</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%81%E4%BA%94"><span class="nav-number">15.</span> <span class="nav-text">十五</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%81%E5%85%AD"><span class="nav-number">16.</span> <span class="nav-text">十六</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%81%E4%B8%83"><span class="nav-number">17.</span> <span class="nav-text">十七</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%81%E5%85%AB"><span class="nav-number">18.</span> <span class="nav-text">十八</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%81%E4%B9%9D"><span class="nav-number">19.</span> <span class="nav-text">十九</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Narsi</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://telegram.me/supernarsi" title="Telegram → https:&#x2F;&#x2F;telegram.me&#x2F;supernarsi" rel="noopener me" target="_blank"><i class="fab fa-telegram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/supernarsi" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;supernarsi" rel="noopener me" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/supernarsi" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;supernarsi" rel="noopener me" target="_blank"><i class="fab fa-weibo fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/supernarsi" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;supernarsi" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:narsihuang@gmail.com" title="E-Mail → mailto:narsihuang@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://supernarsi.github.io/2016/11/12/repo-sanguoshihua/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Narsi">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Narsi">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="《三国史话》读书笔记 | Narsi">
+      <meta itemprop="description" content="吕思勉先生可算是历史类书籍的「票房保证」了。依托深厚的历史功底和一流的论述能力，即使一些枯燥乏味的历史吕老也能「妙笔生花」，何况三国这一世人耳熟能详，也是最受各类文化、影视、娱乐作品最喜爱的热门题材。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          《三国史话》读书笔记
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2016-11-12 00:00:00" itemprop="dateCreated datePublished" datetime="2016-11-12T00:00:00+08:00">2016-11-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E4%B9%A6%E8%AF%84/" itemprop="url" rel="index"><span itemprop="name">书评</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2016/11/12/repo-sanguoshihua/" class="post-meta-item leancloud_visitors" data-flag-title="《三国史话》读书笔记" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2016/11/12/repo-sanguoshihua/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="/2016/11/12/repo-sanguoshihua/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+            <div class="post-description">吕思勉先生可算是历史类书籍的「票房保证」了。依托深厚的历史功底和一流的论述能力，即使一些枯燥乏味的历史吕老也能「妙笔生花」，何况三国这一世人耳熟能详，也是最受各类文化、影视、娱乐作品最喜爱的热门题材。</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="一"><a href="#一" class="headerlink" title="一"></a>一</h1><p>吕思勉先生可算是历史类书籍的「票房保证」了。依托深厚的历史功底和一流的论述能力，即使一些枯燥乏味的历史吕老也能「妙笔生花」，何况三国这一世人耳熟能详，也是最受各类文化、影视、娱乐作品最喜爱的热门题材。</p>
+<h1 id="二"><a href="#二" class="headerlink" title="二"></a>二</h1><p>全书算是为三国史「正名」，矫正许多人们因为受各类文学作品或野史流言影响而歪曲的历史认知，还原真相。玩笑地说，本书改名《三国演义吐槽》也不为过。</p>
+<h1 id="三"><a href="#三" class="headerlink" title="三"></a>三</h1><p>当然，虽然是依托三国史，但《三国演义》毕竟是文学作品，演义二字明白无疑，但许多人竟却信以为真，拿演义当史书看了。正是因为这种情况吕老才苦心矫枉，这也是他在本书中多次提及的一点，莫让历史被文学创作掩盖。<br>操这份心大概也算是一种职业病吧？</p>
+<h1 id="四"><a href="#四" class="headerlink" title="四"></a>四</h1><p>本书除了能让人拨云见「史」，也不乏一些类似「你知道吗」一样的历史知识「小彩蛋」，如《宦官》一章讲到，最初的「宦」并非特指阉人，《曲礼》里说「宦学事师，非礼不亲」，宦与学原本是并列的，都有学习的意思，不同的是学习的渠道或方式，简单来说从大概就是学习理论和实践学习的区别，因此在机关中学习做「公务员」也就是宦，皇帝门下的「公务员」们也就是宦官了。<br>直到后汉光武帝之后，宫中才用阉人做宦官。又如古代的「刑」与今也不尽相同，古代只有用兵器对人身造成不可恢复的创伤，才称之为刑，古代所谓「五刑」，既墨（脸上刺字）、劓（割鼻）、剕（截足趾）、宫（男阉割、女禁足）、大辟（砍头）。</p>
+<h1 id="五"><a href="#五" class="headerlink" title="五"></a>五</h1><p>《黄巾》一章讲张修张鲁之辈，顺带提到于吉之死，《江表传》说因孙策在聚会诸将宾客时见大多人迎拜于吉，于是怒而杀之，《搜神记》却说是孙策欲袭许昌时，见将吏都在于吉处，不能按时聚集，于是怒而杀之。对这两种说法吕都不以为然，并一一回驳。书中很多类似的小细节，讲一段史实时顺手考据一个小插曲，由是吕对历史的考据之细、观点之独立，可见一斑。</p>
+<h1 id="六"><a href="#六" class="headerlink" title="六"></a>六</h1><p>还是《黄巾》一章，讲到道教根源，分明出资张角、张修、张鲁、于吉等一干人，和老子根本毫无干系，他们却奉老子为始祖，只因为老子一派称作道家，便来个顺水推舟张冠李戴，给老子稀里糊涂地安上个道教始祖的名头，实在啼笑皆非。</p>
+<h1 id="七"><a href="#七" class="headerlink" title="七"></a>七</h1><p>《后汉的地理》一章实在是很好的科普教学，以前读三国，对于这个州那个郡，这个州牧那个刺史，实在是一头雾水，也就囫囵吞枣的混过去了，看了这章之后对当时的地理、官职总算有了个还算明白的认知。<br>东汉分为十二州和一个司隶校尉，每州有各自的刺史，刺史只管监察却无行政权。州以下是郡，每郡长官为太守，负责行政管理。郡以下就是县了，县长官或称令或称长，依户口多少而定。<br>直到后汉灵帝，改刺史为州牧，州牧却有了行政权，真正成了一州最大的实权统治者。<br>后汉十三州的大小差别很大，且南北发展悬殊，所以后来吴国所占地盘虽不小于魏国，但国力却是远不及魏国。</p>
+<h1 id="八"><a href="#八" class="headerlink" title="八"></a>八</h1><p>吕先生不仅「吐槽」历史类文学作品，甚至连史学著作也不放过。《曹孟德移驾幸许都》一章，说「其实班固这个人是无甚识见的，根本不配写历史」，《汉书》之所以被崇奉是因国人崇古观念深且古书传世太少没有其他书可校勘。<br>班固在《汉书》中视曹为汉贼，曹的成功也被归功于挟天子以令诸侯这等「欺负孤儿寡母」的卑劣手段。而吕是崇奉曹操的，书中也有很多其他章节为魏武帝拨乱正名，不知是否是因为这类意见相左，所以吕称班固不配书写历史。当然以我这点对历史的认知程度，实在不敢对此妄议是非。</p>
+<h1 id="九"><a href="#九" class="headerlink" title="九"></a>九</h1><p>吕先生引用王阳明的说法，「莫要看轻了豪杰，能做一番大事业的人，总有一段真挚的精神在内。」认为靠一些卑劣计谋手段，是难成大业的。这点倒是令人十分认同。</p>
+<h1 id="十"><a href="#十" class="headerlink" title="十"></a>十</h1><p>史书很演义很大最别在于，对于一些后世耳熟能详的精彩故事，史书往往轻描淡写一带而过。比如《袁绍和曹操的战争》一章，曹操与袁绍相持，几欲退兵，置书荀彧，荀彧复信：「公以至弱当至强，若不能制，比为所乘。」又说：「此用奇之时，不可失也。」短短几字，就带过的官渡之战。可在《三国演义》里该是多么精彩扣人的一场经典战争，单是一个「奇」字，怕是《火凤》就能补全几十话的尔虞我诈临兵斗阵。</p>
+<h1 id="十一"><a href="#十一" class="headerlink" title="十一"></a>十一</h1><p>《赤壁之战的真相》一章很精彩，这段历史恐怕也是国人最熟悉的历史之一了，吕老讲述的角度于我而言算是比较新鲜。不在着墨与战事的书写，而是从背景、局势、动机等多方面分析了这场战争。对孙策死后曹操调走陈登的评论、诸葛亮劝刘备取荆州的考据、孙权必然联刘抗曹动机的解读等读来都很有意思。</p>
+<h1 id="十二"><a href="#十二" class="headerlink" title="十二"></a>十二</h1><p>《刘备取益州和孙权取荆州》对应在《三国演义》中就是各种精华桥段的集锦。先主入川，张飞巴中败张郃，夏侯授首定军山，水淹七军擒于禁，关羽大意失荆州，败走麦城，火烧连营等等一系列精彩演义都发生在这个这章叙述的时间内。<br>因此读这章的时候有种十分奇妙的感觉，吕的文字波澜不惊，冷静地分析着各种背景因果，考据真伪，可这背后的演义故事又在脑海里不断闪现回放：谋士奇才各施妙计，名帅良将临阵操戈，将星陨落，风云突变，实在让人内心激荡。<br>所以历史要是完全脱离了想象，有趣程度想必会降低不少。</p>
+<h1 id="十三"><a href="#十三" class="headerlink" title="十三"></a>十三</h1><p>总结刘备失荆州的原因，吕归结为刘备因工于心计不肯北攻张鲁，却要反噬刘璋，以至给曹操时间平定关中、凉州，导致后来曹操进取汉中时不得不独当大敌，令关羽出兵牵制，终落得痛失良将重地。<br>后世的我们来回首历史仿佛总能指点一二，但时过境迁，当时真实的事态、环境都难考证，即使真的身临其境，临阵决策也难以准确。吕在前文曾经否定过「旁观者清，当局者迷」的说法，认为旁观者虽然貌似能冷静地看到全局，实则很难真正的了解到当局的细节，所以旁观者看似清醒的判断，也许实则只是武断。大概这也同样适用于吕对于刘备失荆州的总结？</p>
+<h1 id="十四"><a href="#十四" class="headerlink" title="十四"></a>十四</h1><p>之后的内容更多是围绕人物来书写。感触最深的是吕对魏武帝受到后世很多历史负面评价的不平，不难看出他是十分崇奉曹操的为人行事的。当然，历史上的曹操也确实雄才大略，书中多次提到的《十二月己亥令》也可为佐证。<br>「后征为都尉，迁典军校尉，意遂更欲为国家讨贼立功，欲望封侯作征西将军，然后题墓道言『汉故征西将军曹侯之墓』，此其志也。」「合兵能多得耳，然常自损，不欲多之；所以然者。兵多意盛，与强敌争，倘更为祸始。」「设使国家无有孤，不知当几人称帝，几人称王！」读来也确实令人动容。<br>后来写到司马懿，吕也对后世并提曹操司马感到不平，评价司马懿猜忌残忍，用尽一生的心机、暴虐的手段，只为自己的地位起见，丝毫没有魏武帝匡扶汉室、平定天下的信念。</p>
+<h1 id="十五"><a href="#十五" class="headerlink" title="十五"></a>十五</h1><p>《姜维和钟会》一章也很有趣，才知这两人后来关系竟然很好，吕赞到：「钟会的效忠于魏，姜维的效忠于汉，又可称封建道德之下的两个烈士了。」</p>
+<h1 id="十六"><a href="#十六" class="headerlink" title="十六"></a>十六</h1><p>书中后面几章突然变成了文言文，看得我有点猝不及防……</p>
+<h1 id="十七"><a href="#十七" class="headerlink" title="十七"></a>十七</h1><p>诸葛亮悉仰于官不置别生一文提到一些名士名将的家底背景之类的八卦，比如夏侯惇清俭好施、邓芝家无余财、曹洪很有钱等……也是一个有趣的视角。</p>
+<h1 id="十八"><a href="#十八" class="headerlink" title="十八"></a>十八</h1><p>《关羽欲杀曹公》这段桃色小品看得我有点懵……</p>
+<h1 id="十九"><a href="#十九" class="headerlink" title="十九"></a>十九</h1><p>《吞泥》一章有点无厘头的意味，只有短短三句话，总结来说就是「吃土历史悠久」……</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E4%B9%A6%E8%AF%84/" rel="tag"><i class="fa fa-tag"></i> 书评</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2015/06/08/repo-jijianouzhoushi/" rel="prev" title="《极简欧洲史》读书笔记">
+                  <i class="fa fa-angle-left"></i> 《极简欧洲史》读书笔记
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2017/01/03/Lao-Zhao/" rel="next" title="老赵">
+                  老赵 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Narsi</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+  <script class="next-config" data-name="leancloud_visitors" type="application/json">{"enable":true,"app_id":"jgctFSUEP9b8AAd5FhFGoZYb-9Nh9j0Va","app_key":"nYs1KHoFWB1pcTM5xrx7Dw4S","server_url":null,"security":false}</script>
+  <script src="/js/third-party/statistics/lean-analytics.js"></script>
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"narsi","count":true,"lazyload":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>

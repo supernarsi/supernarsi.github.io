@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><!-- hexo injector head_begin start --><style type="text/css">.douban-card-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-height: 400px;
+}
+
+.douban-card {
+    display: flex;
+    margin: 30px 10px;
+    padding: 15px;
+    border-radius: 15px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+.douban-card:hover {
+    text-decoration: none;
+}
+
+.douban-card-bgimg {
+    position: absolute;
+    width: 115%;
+    height: 115%;
+    filter: blur(15px) brightness(0.6);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.douban-card-img {
+    position: relative;
+    height: 130px;
+    width: 80px;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.douban-card-left:hover .douban-card-img {
+    filter: blur(5px) brightness(0.6);
+    transform: perspective(800px) rotateX(180deg);
+}
+
+.douban-card-left .douban-card-img {
+    transition: all 500ms ease;
+}
+
+.douban-card-left {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.douban-card-left .douban-card-status {
+    height: 130px;
+    width: 80px;
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 30%;
+    transform: rotateX(180deg);
+    backface-visibility: hidden;
+    transition: all 500ms ease;
+}
+
+.douban-card-left:hover .douban-card-status {
+    transform: perspective(800px) rotateX(0deg);
+}
+
+.douban-card-right {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+    font-size: 16px;
+    font-family: "Courier New", Courier, monospace;
+    line-height: 1.3;
+    color: antiquewhite;
+}
+
+.douban-card-item {
+    margin-top: 4px;
+}
+</style><!-- hexo injector head_begin end -->
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"supernarsi.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="我把自己零散的读书笔记和一些思考丢给 ChatGPT，让它帮我整理归纳，最后的成果还蛮让我意外，不仅帮我理清了一些思路，甚至更感到了一些自己的「嘴笨」，不如就把 AI 的工作成果粘贴过来。另外一句题外的感悟，如今的科技时代，AI 不失为一个有效的辅读手段。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《厌女》读书笔记">
+<meta property="og:url" content="https://supernarsi.github.io/2026/01/19/repo-yannv/index.html">
+<meta property="og:site_name" content="Narsi">
+<meta property="og:description" content="我把自己零散的读书笔记和一些思考丢给 ChatGPT，让它帮我整理归纳，最后的成果还蛮让我意外，不仅帮我理清了一些思路，甚至更感到了一些自己的「嘴笨」，不如就把 AI 的工作成果粘贴过来。另外一句题外的感悟，如今的科技时代，AI 不失为一个有效的辅读手段。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-01-18T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-02-25T12:40:17.094Z">
+<meta property="article:author" content="Narsi">
+<meta property="article:tag" content="书评">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://supernarsi.github.io/2026/01/19/repo-yannv/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://supernarsi.github.io/2026/01/19/repo-yannv/","path":"/2026/01/19/repo-yannv/","title":"《厌女》读书笔记"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>《厌女》读书笔记 | Narsi</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Narsi</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-books"><a href="/books" rel="section"><i class="fa fa-book fa-fw"></i>书籍</a></li><li class="menu-item menu-item-movies"><a href="/movies" rel="section"><i class="fa fa-film fa-fw"></i>电影</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E4%BD%A0%E7%9A%84%E6%A0%B8%E5%BF%83%E8%A7%82%E7%82%B9%E8%84%89%E7%BB%9C%E6%A2%B3%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">一、你的核心观点脉络梳理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%EF%B8%8F%E2%83%A3-%E5%AF%B9%E7%A4%BE%E7%A7%91%E5%86%99%E4%BD%9C%E6%96%B9%E6%B3%95%E7%9A%84%E6%80%80%E7%96%91"><span class="nav-number">1.1.</span> <span class="nav-text">1️⃣ 对社科写作方法的怀疑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%EF%B8%8F%E2%83%A3-%E5%8F%8D%E5%AF%B9%E7%94%A8%E4%B8%AA%E4%BE%8B%E6%9B%BF%E4%BB%A3%E7%BE%A4%E4%BD%93%E6%9C%AC%E8%B4%A8"><span class="nav-number">1.2.</span> <span class="nav-text">2️⃣ 反对用个例替代群体本质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%EF%B8%8F%E2%83%A3-%E5%BC%95%E8%BF%B0%E8%BF%87%E5%A4%9A%EF%BC%8C%E7%AB%8B%E5%9C%BA%E6%A8%A1%E7%B3%8A"><span class="nav-number">1.3.</span> <span class="nav-text">3️⃣ 引述过多，立场模糊</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%EF%B8%8F%E2%83%A3-%E8%AE%A4%E5%8F%AF%E9%97%AE%E9%A2%98%E5%AD%98%E5%9C%A8%EF%BC%8C%E4%BD%86%E5%8F%8D%E5%AF%B9%E4%BB%A5%E2%80%9C%E6%80%A7%E5%88%AB%E6%9C%AC%E4%BD%93%E2%80%9D%E4%B8%BA%E4%B8%AD%E5%BF%83"><span class="nav-number">1.4.</span> <span class="nav-text">4️⃣ 认可问题存在，但反对以“性别本体”为中心</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5%EF%B8%8F%E2%83%A3-%E5%AF%B9%E2%80%9C%E4%B8%8E%E8%87%AA%E6%88%91%E5%92%8C%E8%A7%A3%E2%80%9D%E7%9A%84%E5%86%8D%E7%90%86%E8%A7%A3"><span class="nav-number">1.5.</span> <span class="nav-text">5️⃣ 对“与自我和解”的再理解</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%95%B4%E7%90%86%E5%90%8E%E7%9A%84%E8%AF%BB%E4%B9%A6%E6%80%9D%E8%80%83"><span class="nav-number">2.</span> <span class="nav-text">二、整理后的读书思考</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Narsi</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://telegram.me/supernarsi" title="Telegram → https:&#x2F;&#x2F;telegram.me&#x2F;supernarsi" rel="noopener me" target="_blank"><i class="fab fa-telegram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/supernarsi" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;supernarsi" rel="noopener me" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/supernarsi" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;supernarsi" rel="noopener me" target="_blank"><i class="fab fa-weibo fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/supernarsi" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;supernarsi" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:narsihuang@gmail.com" title="E-Mail → mailto:narsihuang@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://supernarsi.github.io/2026/01/19/repo-yannv/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Narsi">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Narsi">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="《厌女》读书笔记 | Narsi">
+      <meta itemprop="description" content="我把自己零散的读书笔记和一些思考丢给 ChatGPT，让它帮我整理归纳，最后的成果还蛮让我意外，不仅帮我理清了一些思路，甚至更感到了一些自己的「嘴笨」，不如就把 AI 的工作成果粘贴过来。另外一句题外的感悟，如今的科技时代，AI 不失为一个有效的辅读手段。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          《厌女》读书笔记
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2026-01-19 00:00:00" itemprop="dateCreated datePublished" datetime="2026-01-19T00:00:00+08:00">2026-01-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E4%B9%A6%E8%AF%84/" itemprop="url" rel="index"><span itemprop="name">书评</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2026/01/19/repo-yannv/" class="post-meta-item leancloud_visitors" data-flag-title="《厌女》读书笔记" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2026/01/19/repo-yannv/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="/2026/01/19/repo-yannv/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+            <div class="post-description">我把自己零散的读书笔记和一些思考丢给 ChatGPT，让它帮我整理归纳，最后的成果还蛮让我意外，不仅帮我理清了一些思路，甚至更感到了一些自己的「嘴笨」，不如就把 AI 的工作成果粘贴过来。另外一句题外的感悟，如今的科技时代，AI 不失为一个有效的辅读手段。</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="一、你的核心观点脉络梳理"><a href="#一、你的核心观点脉络梳理" class="headerlink" title="一、你的核心观点脉络梳理"></a>一、你的核心观点脉络梳理</h1><p>我把你的思考归为 五条主线：</p>
+<h2 id="1️⃣-对社科写作方法的怀疑"><a href="#1️⃣-对社科写作方法的怀疑" class="headerlink" title="1️⃣ 对社科写作方法的怀疑"></a>1️⃣ 对社科写作方法的怀疑</h2><p>你首先不是在“反对女性主义”，而是在质疑很多社科文本的论证方式本身：</p>
+<ul>
+<li>•	社科类图书越来越符号化、概念化。</li>
+<li>•	缺乏严格的实证或逻辑链条。</li>
+<li>•	更多依赖话语、修辞和立场，而不是论证。<br>在《厌女》中表现为：</li>
+<li>•	过多借助小说、文学、叙事文本做论据。</li>
+<li>•	情绪说服多于理性证明。</li>
+<li>•	让人难以判断结论是分析出来的，还是先设立立场再寻找材料。<br>你的关注点在：方法论是否可靠，而不是结论是否“政治正确”。</li>
+</ul>
+<h2 id="2️⃣-反对用个例替代群体本质"><a href="#2️⃣-反对用个例替代群体本质" class="headerlink" title="2️⃣ 反对用个例替代群体本质"></a>2️⃣ 反对用个例替代群体本质</h2><p>你非常警惕这本书的一个倾向：</p>
+<ul>
+<li>•	把个体经验扩大成“男人”“女人”这样的整体代词。</li>
+<li>•	即便是“多数现象”，也不应自然过渡为本质判断。<br>你的逻辑是：</li>
+<li>•	群体标签一旦形成，就容易刻板化。</li>
+<li>•	讨论不再是“某种结构”，而变成“某种人”。</li>
+<li>•	最终从分析滑向道德审判。<br>你反感的是：<br>社会问题 → 性别本质化 这条推理路径。</li>
+</ul>
+<h2 id="3️⃣-引述过多，立场模糊"><a href="#3️⃣-引述过多，立场模糊" class="headerlink" title="3️⃣ 引述过多，立场模糊"></a>3️⃣ 引述过多，立场模糊</h2><p>你注意到：</p>
+<ul>
+<li>•	上野大量引用他人文本、理论、文学作品。</li>
+<li>•	有时难以区分：</li>
+<li>•	哪些是她的立场。</li>
+<li>•	哪些只是她在转述他人的观点。<br>而且：</li>
+<li>• 被引用的论点本身也存在刻板化、标签化问题。</li>
+<li>•	多层转述容易制造一种“权威叠加感”，却不一定更严谨。<br>你的不适感来自：话语密集，但论证不透明。</li>
+</ul>
+<h2 id="4️⃣-认可问题存在，但反对以“性别本体”为中心"><a href="#4️⃣-认可问题存在，但反对以“性别本体”为中心" class="headerlink" title="4️⃣ 认可问题存在，但反对以“性别本体”为中心"></a>4️⃣ 认可问题存在，但反对以“性别本体”为中心</h2><p>这是你最重要的一条思想线索：<br>你并不否认：</p>
+<ul>
+<li>•	厌女症是复杂且真实存在的。</li>
+<li>•	有结构性、文化性、多维度的问题。<br>但你反对：</li>
+<li>•	把问题根源归结为“男人 vs 女人”这种原始结构。</li>
+<li>•	用性别本体去寻找出路。<br>你的判断是：</li>
+<li>•	当代男女问题的根源不在性别本身。</li>
+<li>•	而在社会环境、制度结构、权力关系、文化叙事。<br>所以你认为：<br>从性别这个原始属性出发寻找解法，很可能是缘木求鱼。<br>同时你也指出：</li>
+<li>•	如书中所说，也存在“厌男症”。</li>
+<li>•	如果只讨论厌女，而不讨论互为结构的情绪与叙事，本身就不完整。<br>你关注的是：结构问题，而不是身份对立。</li>
+</ul>
+<h2 id="5️⃣-对“与自我和解”的再理解"><a href="#5️⃣-对“与自我和解”的再理解" class="headerlink" title="5️⃣ 对“与自我和解”的再理解"></a>5️⃣ 对“与自我和解”的再理解</h2><p>你注意到书中的一句话：<br>「对于女人，女性主义是与自我和解之途。」<br>你的反思是：</p>
+<ul>
+<li>•	这种表述并不只适用于女性。</li>
+<li>•	男性同样需要与自身角色、期待和压迫和解。<br>也就是说：</li>
+<li>•	女性主义不应只是“女性的工具”。</li>
+<li>•	而应是对所有被性别结构塑造的人，提供自我理解的路径。</li>
+</ul>
+<p>你还特别提到：</p>
+<ul>
+<li>•	福柯的论述吸引你。</li>
+<li>•	因为他关注的不是“谁对谁错”，而是：</li>
+<li>•	权力如何运作，</li>
+<li>•	话语如何生产主体，</li>
+<li>•	人如何被结构塑形。</li>
+</ul>
+<p>你更认同：福柯式的结构分析，而不是阵营式对抗。</p>
+<h1 id="二、整理后的读书思考"><a href="#二、整理后的读书思考" class="headerlink" title="二、整理后的读书思考"></a>二、整理后的读书思考</h1><p>《厌女》读书随想：从性别对立到结构反思</p>
+<p>近来阅读社科类书籍时，我越来越感到一种隐约的不安：许多作品似乎缺少严谨的论证链条，而更多依赖概念、符号和立场本身的自洽。《厌女》同样让我产生这种怀疑。</p>
+<p>书中大量使用小说、文学文本与叙事案例作为论证基础，这在启发情绪共鸣方面有效，但在逻辑上却显得松散。文学作品本身是高度情境化与象征化的，将其直接转化为社会结构的证据，难免存在跳跃。它更像是一种话语说服，而非严格意义上的分析。</p>
+<p>我尤其不赞成将个体经验，哪怕是多数经验，放大为“男人”“女人”这样的群体代词。当分析从“某种结构中的人”滑向“某种性别的人”，问题便不再是机制，而成了本质判断。刻板化与标签化，恰恰容易在这种推理中被重新生产。</p>
+<p>此外，书中大量引述他人的观点，有时让我难以分辨哪些是上野自身的立场，哪些只是转述。引述本应服务于论证，但当引述本身也带有标签化倾向时，反而会叠加话语权威，却未必提升说服力。</p>
+<p>我并不否认厌女症的存在及其复杂性。相反，我认同对其进行多维度分析的必要性。但我更倾向认为，当代男女问题的根源并不在性别这一原始属性上，而在社会环境、权力结构与文化叙事之中。如果从“男人”或“女人”本体出发寻找出路，往往会落入身份对立的循环，甚至是缘木求鱼。</p>
+<p>正如书中也提及，“厌男症”同样存在。若只讨论厌女而忽视这种互为结构的情绪与话语，其实并不完整。性别问题本质上并非一方压迫另一方，而是所有人都在被既定结构塑造。</p>
+<p>书中有一句话让我印象深刻：“对于女人，女性主义是与自我和解之途。”但我更愿意把这句话扩展为：对所有人而言，理解性别结构，都是与自我和解的过程。男性同样需要理解自身如何被角色期待、权力逻辑和社会规范所塑形。</p>
+<p>也正因如此，我更被福柯式的论述所吸引。他关心的不是简单的对错，而是权力如何运作、话语如何生产主体、人如何在不自觉中被结构规训。相比阵营化的性别对立，这种结构性的视角，或许更能为现实中的性别困境提供真正的出路。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E4%B9%A6%E8%AF%84/" rel="tag"><i class="fa fa-tag"></i> 书评</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/03/10/repo-aosiweixin/" rel="prev" title="一些感受">
+                  <i class="fa fa-angle-left"></i> 一些感受
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2026/01/22/embedded-freedom/" rel="next" title="嵌入式自由：决定论宇宙中的主体与自由意志">
+                  嵌入式自由：决定论宇宙中的主体与自由意志 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Narsi</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+  <script class="next-config" data-name="leancloud_visitors" type="application/json">{"enable":true,"app_id":"jgctFSUEP9b8AAd5FhFGoZYb-9Nh9j0Va","app_key":"nYs1KHoFWB1pcTM5xrx7Dw4S","server_url":null,"security":false}</script>
+  <script src="/js/third-party/statistics/lean-analytics.js"></script>
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"narsi","count":true,"lazyload":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>
